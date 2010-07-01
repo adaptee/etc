@@ -8,7 +8,7 @@
 
 
 #<ip-address>   <hostname.domain.org>   <hostname>
-127.0.0.1       localhost.localdomain   localhost arch
+127.0.0.1       localhost.localdomain   localhost ubuntu
 
 # 209.85.41.144   ftp.archlinux.org
 
