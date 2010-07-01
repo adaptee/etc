@@ -4,7 +4,7 @@
 # <file system>     <mount point>       <type>      <options>                   <dump>  <pass>
 
 proc                /proc               proc        defaults                        0       0
-/dev/sda3           /                   ext4        relatime,errors=remount-ro      0       0
+/dev/sda13          /                   ext4        relatime,errors=remount-ro      0       0
 /dev/sda10          /boot               ext3        relatime                        0       0
 /dev/sda11          none                swap        sw                              0       0
 
@@ -17,7 +17,7 @@ shm                 /dev/shm            tmpfs       nodev,nosuid                
 
 /dev/sda1           /mnt/personal       ext3        relatime                        0       0
 /dev/sda12          /mnt/opensuse       ext4        relatime                        0       0
-/dev/sda13          /mnt/arch           ext4        relatime                        0       0
+/dev/sda3           /mnt/kubuntu        ext4        relatime                        0       0
 
 /dev/sda5           /home/whodare/vbox  reiserfs    rw,relatime                     0       0
 /dev/sda6           /home/whodare/audio reiserfs    rw,relatime                     0       0
@@ -26,3 +26,4 @@ shm                 /dev/shm            tmpfs       nodev,nosuid                
 /dev/sda9           /home/whodare/img   reiserfs    rw,relatime                     0       0
 
 
+/var/lib/pacman.db  /var/lib/pacman     reiserfs    loop,defaults                   0       0
