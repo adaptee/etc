@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# update abs snapshot
+abs
+
+# download availabe new  version，but do not install 
+pacman -Syw
+
+# clear the left over of abs compilation
+rm /var/abs/local/* -rf
+
+# optimize the pacman database to imporve query speed
+#pacman-optimize && sync
+
+

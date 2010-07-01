@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# make sure the vbox modules are up to date with the kernel version
+/etc/rc.d/vboxdrv setup
