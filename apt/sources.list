@@ -52,21 +52,6 @@ deb-src http://security.ubuntu.com/ubuntu lucid-security universe
 deb http://security.ubuntu.com/ubuntu lucid-security multiverse
 deb-src http://security.ubuntu.com/ubuntu lucid-security multiverse
 
-# virtualbox
-deb http://download.virtualbox.org/virtualbox/debian lucid non-free
-
-# skype
-deb http://download.skype.com/linux/repos/debian/ stable non-free
-
-# deadbeef
-# deb http://hadret.rootnode.net/debian/ unstable main
-
-# deadbeef ppa
-# deb http://ppa.launchpad.net/alexey-smirnov/deadbeef/ubuntu lucid main
-
 # swiftfox
 deb http://getswiftfox.com/builds/debian unstable non-free
-
-# xbmc
-# deb http://ppa.launchpad.net/team-xbmc/ppa/ubuntu lucid main
 
