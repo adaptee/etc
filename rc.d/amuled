@@ -20,7 +20,7 @@ case "$1" in
     start)
         stat_busy "Starting aMule Daemon"
 
-        su "$USER" -c "$(printf "%q -f" "$DAEMON" ) >& >/dev/null "
+        su "$USER" -c "LANG=zh_CN.utf-8 $(printf "%q -f" "$DAEMON" ) 2>&1 >/dev/null "
 
         add_daemon amuled
         stat_done
