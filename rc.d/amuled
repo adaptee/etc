@@ -1,0 +1,51 @@
+#!/bin/bash
+
+. /etc/rc.conf
+. /etc/rc.d/functions
+
+NAME=$(basename "$0")
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+DAEMON=$(which amuled)
+# A user who already ran amule once to configure it.
+USER="whodare"
+
+# the daemon should be executable
+test -x "${DAEMON}" || exit 0
+# the username should be non-empty
+test -n "$USER"   || exit 0
+
+
+case "$1" in
+    start)
+        stat_busy "Starting aMule Daemon"
+
+        su "$USER" -c "$(printf "%q -f" "$DAEMON" ) >& >/dev/null "
+
+        add_daemon amuled
+        stat_done
+        ;;
+
+    stop)
+        stat_busy "Stopping aMule Daemon"
+
+        killall --quiet --ignore-case "$DAEMON"
+
+        rm_daemon amuled
+        stat_done
+        ;;
+
+    restart|force-reload)
+        $0 stop
+        sleep 1
+        $0 start
+        ;;
+
+    *)
+        printf "Usage: %q {start|stop|restart|force-reload}\n" "$0" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
+
