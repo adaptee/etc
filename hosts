@@ -1,31 +1,43 @@
-# /etc/hosts: Local Host Database
 #
-# This file describes a number of aliases-to-address mappings for the for 
-# local hosts that share this file.
-#
-# In the presence of the domain name service or NIS, this file may not be 
-# consulted at all; see /etc/host.conf for the resolution order.
+# /etc/hosts: static lookup table for host names
 #
 
 # IPv4 and IPv6 localhost aliases
-127.0.0.1	localhost
-::1		localhost
+127.0.0.1       localhost
+::1             localhost
 
-#
-# Imaginary network.
-#10.0.0.2               myname
-#10.0.0.3               myfriend
-#
-# According to RFC 1918, you can use the following IP networks for private 
-# nets which will never be connected to the Internet:
-#
-#       10.0.0.0        -   10.255.255.255
-#       172.16.0.0      -   172.31.255.255
-#       192.168.0.0     -   192.168.255.255
-#
-# In case you want to be able to connect directly to the Internet (i.e. not 
-# behind a NAT, ADSL router, etc...), you need real official assigned 
-# numbers.  Do not try to invent your own network numbers but instead get one 
-# from your network provider (if any) or from your regional registry (ARIN, 
-# APNIC, LACNIC, RIPE NCC, or AfriNIC.)
-#
+
+#<ip-address>   <hostname.domain.org>   <hostname>
+127.0.0.1       localhost.localdomain   localhost arch
+
+# 209.85.41.144   ftp.archlinux.org
+
+# GFW has blocked xmarks....
+#64.147.188.86     www.xmarks.com
+#64.147.188.92     api.xmarks.com
+#64.147.188.89     login.xmarks.com
+#64.147.188.87     sync.xmarks.com
+#64.147.188.86     static.xmarks.com
+#64.147.188.86     download.xmarks.com
+#64.147.188.86     my.xmarks.com
+
+173.239.65.20 www.xmarks.com
+173.239.65.21 api.xmarks.com
+173.239.65.22 login.xmarks.com
+173.239.65.23 sync.xmarks.com
+173.239.65.20 static.xmarks.com
+173.239.65.20 download.xmarks.com
+64.147.188.86 my.xmarks.com
+
+# GFW also blocks dropbox
+174.36.30.71        dropbox.com
+174.36.30.71        www.dropbox.com
+174.36.30.71        https://www.dropbox.com
+
+# cnmule
+64.182.117.65       https://cmule6.info
+64.182.117.65       cmule6.info
+
+
+# End of file
+

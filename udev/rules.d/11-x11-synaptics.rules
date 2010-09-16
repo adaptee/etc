@@ -1,0 +1,8 @@
+#
+# NOTE, the command to run must be a rare command with no argument
+# So, the well quoted "synclient TouchpadOff=1" will not work
+# Such operation HAS to be wrapper into a simpler script
+#
+ACTION=="add", SUBSYSTEM=="input", ENV{ID_CLASS}="mouse", RUN+="/home/whodare/bin/mouse-plugged-in"
+ACTION=="remove", SUBSYSTEM=="input", ENV{ID_CLASS}="mouse", RUN+="/home/whodare/bin/mouse-plugged-out"
+

@@ -1,0 +1,9 @@
+#
+# /etc/hosts.allow
+#
+
+lighttpd: ALL
+
+sshd: ALL
+
+# End of file

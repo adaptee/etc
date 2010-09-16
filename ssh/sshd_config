@@ -1,4 +1,4 @@
-#	$OpenBSD: sshd_config,v 1.81 2009/10/08 14:03:41 markus Exp $
+#	$OpenBSD: sshd_config,v 1.80 2008/07/02 02:24:18 djm Exp $
 
 # This is the sshd server system-wide configuration file.  See
 # sshd_config(5) for more information.
@@ -12,11 +12,13 @@
 
 #Port 22
 #AddressFamily any
-#ListenAddress 0.0.0.0
+ListenAddress 0.0.0.0
 #ListenAddress ::
 
-# The default requires explicit activation of protocol 1
-#Protocol 2
+# Disable legacy (protocol version 1) support in the server for new
+# installations. In future the default will change to require explicit
+# activation of protocol 1
+Protocol 2
 
 # HostKey for protocol version 1
 #HostKey /etc/ssh/ssh_host_key
@@ -36,14 +38,17 @@
 # Authentication:
 
 #LoginGraceTime 2m
-#PermitRootLogin yes
+
+# root are not allowed to login with password
+PermitRootLogin without-password
+
 #StrictModes yes
 #MaxAuthTries 6
 #MaxSessions 10
 
-#RSAAuthentication yes
-#PubkeyAuthentication yes
-#AuthorizedKeysFile	.ssh/authorized_keys
+RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile	.ssh/authorized_keys
 
 # For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
 #RhostsRSAAuthentication no
@@ -55,12 +60,13 @@
 # Don't read the user's ~/.rhosts and ~/.shosts files
 #IgnoreRhosts yes
 
-# To disable tunneled clear text passwords, change to no here!
+# diable password authentiation . Use private key, please
 PasswordAuthentication no
+
 #PermitEmptyPasswords no
 
 # Change to no to disable s/key passwords
-#ChallengeResponseAuthentication yes
+ChallengeResponseAuthentication no
 
 # Kerberos options
 #KerberosAuthentication no
@@ -89,12 +95,12 @@ UsePAM yes
 #X11Forwarding no
 #X11DisplayOffset 10
 #X11UseLocalhost yes
-PrintMotd no
-PrintLastLog no
+#PrintMotd yes
+#PrintLastLog yes
 #TCPKeepAlive yes
 #UseLogin no
 #UsePrivilegeSeparation yes
-#PermitUserEnvironment no
+#PermitUserEnvironment Yes
 #Compression delayed
 #ClientAliveInterval 0
 #ClientAliveCountMax 3
@@ -108,7 +114,7 @@ PrintLastLog no
 #Banner none
 
 # override default of no subsystems
-Subsystem	sftp	/usr/lib/misc/sftp-server
+Subsystem	sftp	/usr/lib/ssh/sftp-server
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
