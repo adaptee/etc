@@ -1,0 +1,33 @@
+
+# ---
+# BEGIN: kde-base/kdialog-4.5.1
+# ---
+# ---
+# END: kde-base/kdialog-4.5.1
+# ---
+
+
+# ---
+# BEGIN: kde-base/kde-meta-4.5.1
+# ---
+=sys-fs/udev-151-r4 extras
+# ---
+# END: kde-base/kde-meta-4.5.1
+# ---
+
+
+# ---
+# BEGIN: kde-base/pykde4-4.5.1
+# ---
+# ---
+# END: kde-base/pykde4-4.5.1
+# ---
+
+
+# ---
+# BEGIN: dev-python/PyQt4-4.7.6
+# ---
+# ---
+# END: dev-python/PyQt4-4.7.6
+# ---
+
