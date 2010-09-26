@@ -6,6 +6,8 @@
 # Make sure that the script will "exit 0" on success or any other
 # value on error.
 #
+# Make sure this script DO NOT produce any output (use &>/dev/null)
+# 
 # In order to enable or disable this script just change the execution
 # bits.
 #
@@ -17,4 +19,6 @@ mkdir /tmp/coredump/
 echo '/tmp/coredump/%e-%s.core' > /proc/sys/kernel/core_pattern
 chown -R whodare:whodare /tmp/coredump
 
-exit 0
+# swap Esc and CapsLock, for vimmer !
+echo "keycode 58 = Escape" | loadkeys -
+
