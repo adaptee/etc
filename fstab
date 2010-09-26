@@ -16,7 +16,7 @@ shm                 /dev/shm            tmpfs       nodev,nosuid                
 
 
 /dev/sda1           /mnt/personal       ext3        relatime                        0       0
-/dev/sda12          /mnt/gentoo         ext4        relatime                        0       0
+/dev/sda3           /mnt/kubuntu        ext4        relatime                        0       0
 /dev/sda13          /mnt/arch           ext4        relatime                        0       0
 
 /dev/sda5           /home/whodare/vbox  reiserfs    rw,relatime                     0       0
