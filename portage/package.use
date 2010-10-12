@@ -99,17 +99,25 @@ app-editors/gvim                -netbeans -nextaw
 #app-shells/bash                 plugins
 
 app-i18n/ibus                   gconf -vala
+
+# allow eix to use the sqlite backend of portage
+app-portage/eix                 sqlite
+
+# build for ibus framework
 app-i18n/sunpinyin              ibus -xim
 
+dev-vcs/bzr                     -sftp
 dev-vcs/git                     bash-completion subversion 
-dev-vcs/subversion              -dso
+dev-vcs/subversion              -dso 
 dev-lang/python                 sqlite
 
 kde-base/kdepimlibs             semantic-desktop
 kde-base/kdelibs                semantic-desktop
 kde-base/okular                 djvu
 
+# make sure unrar is insalled, so that comix can view rar archive directly
 media-gfx/comix                 unrar
+
 media-plugins/gst-plugins-meta  pulseaudio flac taglib ffmpeg
 media-plugins/audacious-plugins cue
 media-sound/audacious           chardet
@@ -120,14 +128,36 @@ media-sound/phonon              pulseaudio
 media-video/mplayer             enca real vdpau ssse3 shm -gmplayer -lirc -xscreensaver 
 media-video/vlc                 pulseaudio libass
 
+# I do not need such advanced features
 net-fs/samba                    winbind -ads -cluster -quota
+
+# support qq protocol
 net-im/pidgin                   qq -perl
+
+# build amuled and amulegui ; do not build cas and wxcas
 net-p2p/amule                   daemon remote geoip -upnp -stats
+
 net-p2p/ktorrent                -upnp  -zeroconf -magnetgenerator -mediaplayer -webinterface 
+
+# only use it as a DNS cacher
 net-dns/dnsmasq                 -dhcp -tftp
+
+# I use wicd-client-kde as gui
 net-misc/wicd                   -gtk
+net-misc/slimrat                -X
+
+# 'crypt' will introduce cryptsetup, which in-turn introduce lvm2....
+sys-apps/hal                    -crypt
+
+# I do not use LVM2
+sys-block/parted	        -device-mapper
+
 www-client/opera                -gtk
+
+# apply patches provided by ubuntu
 x11-libs/cairo                  cleartype lcdfilter
+# do not need gui
+x11-misc/redshift               -gtk
 
 # ---
 # BEGIN: net-im/skype-2.1.0.81
@@ -198,5 +228,106 @@ x11-libs/cairo                  cleartype lcdfilter
 # ---
 # ---
 # END: app-arch/dtrx-6.6-r1
+# ---
+
+
+# ---
+# BEGIN: dev-python/pydb-1.26
+# ---
+# ---
+# END: dev-python/pydb-1.26
+# ---
+
+
+# ---
+# BEGIN: dev-util/qt-creator-2.0.1
+# ---
+=x11-libs/qt-gui-4.7.0 private-headers
+=x11-libs/qt-declarative-4.7.0 private-headers
+=x11-libs/qt-core-4.7.0 private-headers
+=x11-libs/qt-script-4.7.0 private-headers
+# ---
+# END: dev-util/qt-creator-2.0.1
+# ---
+
+
+# ---
+# BEGIN: sys-kernel/zen-sources-2.6.35_p2
+# ---
+# ---
+# END: sys-kernel/zen-sources-2.6.35_p2
+# ---
+
+
+# ---
+# BEGIN: media-tv/xbmc-9.11-r5
+# ---
+# ---
+# END: media-tv/xbmc-9.11-r5
+# ---
+
+
+# ---
+# BEGIN: app-portage/e-file-20081230
+# ---
+# ---
+# END: app-portage/e-file-20081230
+# ---
+
+
+# ---
+# BEGIN: sys-apps/portage-2.2_rc91
+# ---
+# ---
+# END: sys-apps/portage-2.2_rc91
+# ---
+
+
+# ---
+# BEGIN: media-sound/konvertible-0.1.4
+# ---
+# ---
+# END: media-sound/konvertible-0.1.4
+# ---
+
+
+# ---
+# BEGIN: net-misc/googlecl-0.9.10
+# ---
+# ---
+# END: net-misc/googlecl-0.9.10
+# ---
+
+
+# ---
+# BEGIN: media-tv/huludesktop-0.9.8-r1
+# ---
+# ---
+# END: media-tv/huludesktop-0.9.8-r1
+# ---
+
+
+# ---
+# BEGIN: net-misc/slimrat-1.0
+# ---
+=dev-lang/perl-5.10.1 ithreads
+# ---
+# END: net-misc/slimrat-1.0
+# ---
+
+
+# ---
+# BEGIN: app-shells/bashdb-4.1.0.4
+# ---
+# ---
+# END: app-shells/bashdb-4.1.0.4
+# ---
+
+
+# ---
+# BEGIN: sys-apps/rhash-1.1.4
+# ---
+# ---
+# END: sys-apps/rhash-1.1.4
 # ---
 
