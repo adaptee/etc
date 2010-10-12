@@ -27,5 +27,13 @@
 # options --dump or --dump-defaults.
 # For more detailed explanations see the manpage of eix.
 
-PORTDIR_CACHE_METHOD=parse|ebuild*
+# to work with git version portage tree
+#PORTDIR_CACHE_METHOD=parse|ebuild*
+
+# take advantage of the sqlite backend of portage cache
+PORTDIR_CACHE_METHOD='sqlite'
+OVERLAY_CACHE_METHOD='sqlite'
+
+
+
 
