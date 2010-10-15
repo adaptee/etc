@@ -3,6 +3,6 @@
 # So, the well quoted "synclient TouchpadOff=1" will not work
 # Such operation HAS to be wrapper into a simpler script
 #
-ACTION=="add", SUBSYSTEM=="input", ENV{ID_CLASS}="mouse", RUN+="/home/whodare/bin/mouse-plugged-in"
-ACTION=="remove", SUBSYSTEM=="input", ENV{ID_CLASS}="mouse", RUN+="/home/whodare/bin/mouse-plugged-out"
+ACTION=="add",    SUBSYSTEM=="input", ENV{ID_CLASS}="mouse", RUN+="/etc/udev/scripts.d/mouse-plugged-in.sh"
+ACTION=="remove", SUBSYSTEM=="input", ENV{ID_CLASS}="mouse", RUN+="/etc/udev/scripts.d/mouse-plugged-out.sh"
 
