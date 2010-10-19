@@ -1,28 +1,31 @@
 # /etc/fstab: static file system information.
 #
 #
-# <file system>     <mount point>       <type>      <options>                   <dump>  <pass>
+# <file system>     <mount point>           <type>      <options>                   <dump>  <pass>
 
-proc                /proc               proc        defaults                        0       0
-/dev/sda3           /                   ext4        relatime,errors=remount-ro      0       0
-/dev/sda10          /boot               ext3        relatime                        0       0
-/dev/sda11          none                swap        sw                              0       0
+/dev/sda1           /                       reiserfs    relatime                        0       0
+/dev/sda5           /boot                   ext3        relatime                        0       0
+/dev/sda12          none                    swap        sw                              0       0
 
-devpts              /dev/pts            devpts      defaults                        0       0
-shm                 /dev/shm            tmpfs       nodev,nosuid                    0       0
+proc                /proc                   proc        defaults                        0       0
+none                /proc/bus/usb           usbfs       noauto,defaults                 0       0
 
-/dev/cdrom          /media/cd           auto        ro,user,noauto,unhide           0       0
-/dev/dvd            /media/dvd          auto        ro,user,noauto,unhide           0       0
+devpts              /dev/pts                devpts      defaults                        0       0
+shm                 /dev/shm                tmpfs       nodev,nosuid                    0       0
+
+/dev/cdrom          /media/cd               auto        ro,user,noauto,unhide           0       0
+/dev/dvd            /media/dvd              auto        ro,user,noauto,unhide           0       0
 
 
-/dev/sda1           /mnt/personal       ext3        relatime                        0       0
-/dev/sda12          /mnt/gentoo         ext4        relatime                        0       0
-/dev/sda13          /mnt/arch           ext4        relatime                        0       0
+/dev/sda1           /mnt/arch               reiserfs    rw,relatime                     0       0
+/dev/sda3           /mnt/gentoo             reiserfs    rw,relatime                     0       0
 
-/dev/sda5           /home/whodare/vbox  reiserfs    rw,relatime                     0       0
-/dev/sda6           /home/whodare/audio reiserfs    rw,relatime                     0       0
-/dev/sda7           /home/whodare/down  reiserfs    rw,relatime                     0       0
-/dev/sda8           /home/whodare/book  reiserfs    rw,relatime                     0       0
-/dev/sda9           /home/whodare/img   reiserfs    rw,relatime                     0       0
+/dev/sda6           /home/whodare/audio     reiserfs    rw,relatime                     0       0
+/dev/sda7           /home/whodare/book      reiserfs    rw,relatime                     0       0
+/dev/sda8           /home/whodare/down      reiserfs    rw,relatime                     0       0
+/dev/sda9           /home/whodare/img       reiserfs    rw,relatime                     0       0
+/dev/sda10          /home/whodare/vbox      reiserfs    rw,relatime                     0       0
+
+/dev/sda11          /mnt/personal           reiserfs    rw,relatime                     0       0
 
 
