@@ -1,99 +1,5 @@
-
-# ---
-# BEGIN: kde-base/kdialog-4.5.1
-# ---
-# ---
-# END: kde-base/kdialog-4.5.1
-# ---
-
-
-# ---
-# BEGIN: kde-base/kde-meta-4.5.1
-# ---
 =sys-fs/udev-151-r4 extras
-# ---
-# END: kde-base/kde-meta-4.5.1
-# ---
 
-
-# ---
-# BEGIN: kde-base/pykde4-4.5.1
-# ---
-# ---
-# END: kde-base/pykde4-4.5.1
-# ---
-
-
-# ---
-# BEGIN: dev-python/PyQt4-4.7.6
-# ---
-# ---
-# END: dev-python/PyQt4-4.7.6
-# ---
-
-
-# ---
-# BEGIN: app-emulation/virtualbox-bin-3.2.8
-# ---
-# ---
-# END: app-emulation/virtualbox-bin-3.2.8
-# ---
-
-
-# ---
-# BEGIN: app-emulation/virtualbox-bin-3.2.8
-# ---
-# ---
-# END: app-emulation/virtualbox-bin-3.2.8
-# ---
-
-
-# ---
-# BEGIN: app-text/chmsee-1.2.0
-# ---
-# ---
-# END: app-text/chmsee-1.2.0
-# ---
-
-
-# ---
-# BEGIN: www-plugins/adobe-flash-10.1.82.76-r1
-# ---
-# ---
-# END: www-plugins/adobe-flash-10.1.82.76-r1
-# ---
-
-
-# ---
-# BEGIN: dev-util/xmlindent-0.2.17-r1
-# ---
-# ---
-# END: dev-util/xmlindent-0.2.17-r1
-# ---
-
-
-# ---
-# BEGIN: app-i18n/sunpinyin-2.0.1
-# ---
-# ---
-# END: app-i18n/sunpinyin-2.0.1
-# ---
-
-
-# ---
-# BEGIN: x11-terms/terminator-0.95
-# ---
-# ---
-# END: x11-terms/terminator-0.95
-# ---
-
-
-# ---
-# BEGIN: sys-block/partitionmanager-1.0.1
-# ---
-# ---
-# END: sys-block/partitionmanager-1.0.1
-# ---
 app-admin/conky                 truetype -ipv6
 app-editors/gvim                -netbeans -nextaw
 #app-shells/bash                 plugins
@@ -125,8 +31,13 @@ media-sound/cmus                wma
 media-sound/deadbeef            ffmpeg wavpack pulseaudio
 media-sound/kid3                -handbook
 media-sound/phonon              pulseaudio
+media-sound/pulseaudio          -hal
 media-video/mplayer             enca real vdpau ssse3 shm -gmplayer -lirc -xscreensaver 
 media-video/vlc                 pulseaudio libass
+
+# only use console version
+net-analyzer/mtr                -gtk
+
 
 # I do not need such advanced features
 net-fs/samba                    winbind -ads -cluster -quota
@@ -134,10 +45,13 @@ net-fs/samba                    winbind -ads -cluster -quota
 # support qq protocol
 net-im/pidgin                   qq -perl
 
+net-misc/aria2                  metalink bittorrent
+
 # build amuled and amulegui ; do not build cas and wxcas
 net-p2p/amule                   daemon remote geoip -upnp -stats
 
 net-p2p/ktorrent                -upnp  -zeroconf -magnetgenerator -mediaplayer -webinterface 
+#net-p2p/rtorrent                daemon
 
 # only use it as a DNS cacher
 net-dns/dnsmasq                 -dhcp -tftp
@@ -148,95 +62,19 @@ net-misc/slimrat                -X
 
 # 'crypt' will introduce cryptsetup, which in-turn introduce lvm2....
 sys-apps/hal                    -crypt
+# do not need translated manpages!
+sys-apps/man-pages              -linguas_zh_CN
 
-# I do not use LVM2
-sys-block/parted	        -device-mapper
+sys-apps/paludis                python-bindings vim-syntax 
+
 
 www-client/opera                -gtk
 
 # apply patches provided by ubuntu
 x11-libs/cairo                  cleartype lcdfilter
+
 # do not need gui
 x11-misc/redshift               -gtk
-
-# ---
-# BEGIN: net-im/skype-2.1.0.81
-# ---
-# ---
-# END: net-im/skype-2.1.0.81
-# ---
-
-
-# ---
-# BEGIN: net-p2p/ktorrent-4.0.3
-# ---
-# ---
-# END: net-p2p/ktorrent-4.0.3
-# ---
-
-
-# ---
-# BEGIN: media-sound/deadbeef-0.4.1
-# ---
-# ---
-# END: media-sound/deadbeef-0.4.1
-# ---
-
-
-# ---
-# BEGIN: app-text/madedit-0.2.9
-# ---
-# ---
-# END: app-text/madedit-0.2.9
-# ---
-
-
-# ---
-# BEGIN: app-emulation/virtualbox-modules-3.2.8
-# ---
-# ---
-# END: app-emulation/virtualbox-modules-3.2.8
-# ---
-
-
-# ---
-# BEGIN: net-misc/ksshaskpass-0.5.3
-# ---
-# ---
-# END: net-misc/ksshaskpass-0.5.3
-# ---
-
-
-# ---
-# BEGIN: dev-lang/perl-5.10.1
-# ---
-# ---
-# END: dev-lang/perl-5.10.1
-# ---
-
-
-# ---
-# BEGIN: sys-apps/portage-2.1.9.10
-# ---
-# ---
-# END: sys-apps/portage-2.1.9.10
-# ---
-
-
-# ---
-# BEGIN: app-arch/dtrx-6.6-r1
-# ---
-# ---
-# END: app-arch/dtrx-6.6-r1
-# ---
-
-
-# ---
-# BEGIN: dev-python/pydb-1.26
-# ---
-# ---
-# END: dev-python/pydb-1.26
-# ---
 
 
 # ---
@@ -252,62 +90,6 @@ x11-misc/redshift               -gtk
 
 
 # ---
-# BEGIN: sys-kernel/zen-sources-2.6.35_p2
-# ---
-# ---
-# END: sys-kernel/zen-sources-2.6.35_p2
-# ---
-
-
-# ---
-# BEGIN: media-tv/xbmc-9.11-r5
-# ---
-# ---
-# END: media-tv/xbmc-9.11-r5
-# ---
-
-
-# ---
-# BEGIN: app-portage/e-file-20081230
-# ---
-# ---
-# END: app-portage/e-file-20081230
-# ---
-
-
-# ---
-# BEGIN: sys-apps/portage-2.2_rc91
-# ---
-# ---
-# END: sys-apps/portage-2.2_rc91
-# ---
-
-
-# ---
-# BEGIN: media-sound/konvertible-0.1.4
-# ---
-# ---
-# END: media-sound/konvertible-0.1.4
-# ---
-
-
-# ---
-# BEGIN: net-misc/googlecl-0.9.10
-# ---
-# ---
-# END: net-misc/googlecl-0.9.10
-# ---
-
-
-# ---
-# BEGIN: media-tv/huludesktop-0.9.8-r1
-# ---
-# ---
-# END: media-tv/huludesktop-0.9.8-r1
-# ---
-
-
-# ---
 # BEGIN: net-misc/slimrat-1.0
 # ---
 =dev-lang/perl-5.10.1 ithreads
@@ -316,18 +98,79 @@ x11-misc/redshift               -gtk
 # ---
 
 
+
 # ---
-# BEGIN: app-shells/bashdb-4.1.0.4
+# BEGIN: x11-themes/gtk-engines-qtcurve-1.6.4
 # ---
 # ---
-# END: app-shells/bashdb-4.1.0.4
+# END: x11-themes/gtk-engines-qtcurve-1.6.4
 # ---
 
 
 # ---
-# BEGIN: sys-apps/rhash-1.1.4
+# BEGIN: x11-themes/qtcurve-qt4-1.6.4
 # ---
 # ---
-# END: sys-apps/rhash-1.1.4
+# END: x11-themes/qtcurve-qt4-1.6.4
+# ---
+
+
+# ---
+# BEGIN: sys-fs/tagfs-9999
+# ---
+# ---
+# END: sys-fs/tagfs-9999
+# ---
+
+
+# ---
+# BEGIN: media-sound/puddletag-0.9.5
+# ---
+# ---
+# END: media-sound/puddletag-0.9.5
+# ---
+
+
+# ---
+# BEGIN: media-sound/soundkonverter-1.0.0_beta1
+# ---
+# ---
+# END: media-sound/soundkonverter-1.0.0_beta1
+# ---
+
+
+# ---
+# BEGIN: sys-apps/portage-2.2_rc97
+# ---
+# ---
+# END: sys-apps/portage-2.2_rc97
+# ---
+
+
+# ---
+# BEGIN: x11-misc/pcmanfm-9999
+# ---
+x11-misc/pcmanfm                #udev #-hal
+x11-libs/libfm                  #udev udisks #-hal
+# I do not use LVM2
+sys-block/parted	        device-mapper
+# ---
+# END: x11-misc/pcmanfm-9999
+# ---
+
+
+# ---
+# BEGIN: x11-misc/pcmanfm-0.9.7-r2
+# ---
+# ---
+# END: x11-misc/pcmanfm-0.9.7-r2
+# ---
+
+
+# ---
+# BEGIN: net-p2p/ktorrent-4.0.4
+# ---
+# ---
+# END: net-p2p/ktorrent-4.0.4
 # ---
 
