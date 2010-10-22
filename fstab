@@ -3,7 +3,7 @@
 #
 # <file system>     <mount point>           <type>      <options>                   <dump>  <pass>
 
-/dev/sda1           /                       reiserfs    relatime                        0       0
+/dev/sda2           /                       reiserfs    relatime                        0       0
 /dev/sda5           /boot                   ext3        relatime                        0       0
 /dev/sda12          none                    swap        sw                              0       0
 
