@@ -19,10 +19,13 @@ dev-lang/python                 sqlite
 
 kde-base/kdepimlibs             semantic-desktop
 kde-base/kdelibs                semantic-desktop
+# support .djvu format
 kde-base/okular                 djvu
 
 # make sure unrar is insalled, so that comix can view rar archive directly
 media-gfx/comix                 unrar
+
+media-libs/gd                   fontconfig
 
 media-plugins/gst-plugins-meta  pulseaudio flac taglib ffmpeg
 media-plugins/audacious-plugins cue
@@ -44,6 +47,8 @@ net-fs/samba                    winbind -ads -cluster -quota
 
 # support qq protocol
 net-im/pidgin                   qq -perl
+
+net-libs/libproxy               -xulrunner
 
 net-misc/aria2                  metalink bittorrent
 
@@ -67,7 +72,7 @@ sys-apps/man-pages              -linguas_zh_CN
 
 sys-apps/paludis                python-bindings vim-syntax 
 
-
+# I only use KDE
 www-client/opera                -gtk
 
 # apply patches provided by ubuntu
@@ -77,16 +82,6 @@ x11-libs/cairo                  cleartype lcdfilter
 x11-misc/redshift               -gtk
 
 
-# ---
-# BEGIN: dev-util/qt-creator-2.0.1
-# ---
-=x11-libs/qt-gui-4.7.0 private-headers
-=x11-libs/qt-declarative-4.7.0 private-headers
-=x11-libs/qt-core-4.7.0 private-headers
-=x11-libs/qt-script-4.7.0 private-headers
-# ---
-# END: dev-util/qt-creator-2.0.1
-# ---
 
 
 # ---
@@ -98,60 +93,11 @@ x11-misc/redshift               -gtk
 # ---
 
 
-
-# ---
-# BEGIN: x11-themes/gtk-engines-qtcurve-1.6.4
-# ---
-# ---
-# END: x11-themes/gtk-engines-qtcurve-1.6.4
-# ---
-
-
-# ---
-# BEGIN: x11-themes/qtcurve-qt4-1.6.4
-# ---
-# ---
-# END: x11-themes/qtcurve-qt4-1.6.4
-# ---
-
-
-# ---
-# BEGIN: sys-fs/tagfs-9999
-# ---
-# ---
-# END: sys-fs/tagfs-9999
-# ---
-
-
-# ---
-# BEGIN: media-sound/puddletag-0.9.5
-# ---
-# ---
-# END: media-sound/puddletag-0.9.5
-# ---
-
-
-# ---
-# BEGIN: media-sound/soundkonverter-1.0.0_beta1
-# ---
-# ---
-# END: media-sound/soundkonverter-1.0.0_beta1
-# ---
-
-
-# ---
-# BEGIN: sys-apps/portage-2.2_rc97
-# ---
-# ---
-# END: sys-apps/portage-2.2_rc97
-# ---
-
-
 # ---
 # BEGIN: x11-misc/pcmanfm-9999
 # ---
-x11-misc/pcmanfm                #udev #-hal
-x11-libs/libfm                  #udev udisks #-hal
+x11-misc/pcmanfm                udev -hal
+x11-libs/libfm                  udev udisks -hal
 # I do not use LVM2
 sys-block/parted	        device-mapper
 # ---
@@ -159,18 +105,5 @@ sys-block/parted	        device-mapper
 # ---
 
 
-# ---
-# BEGIN: x11-misc/pcmanfm-0.9.7-r2
-# ---
-# ---
-# END: x11-misc/pcmanfm-0.9.7-r2
-# ---
 
-
-# ---
-# BEGIN: net-p2p/ktorrent-4.0.4
-# ---
-# ---
-# END: net-p2p/ktorrent-4.0.4
-# ---
 
