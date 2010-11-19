@@ -8,7 +8,7 @@
 #Server = http://archdelta.net/$repo/os/i686
 
 # Official
-Server = http://ftp.archlinux.org/$repo/os/i686
+#Server = http://ftp.archlinux.org/$repo/os/i686
 Server = ftp://ftp.archlinux.org/$repo/os/i686
 
 # Any
