@@ -5,11 +5,11 @@
 
 ## Contain the binary diff which can be used by pacman & xdelta3
 ## Only the i686 versions of core, extra, community repos are supported
-#Server = http://archdelta.net/$repo/os/i686
+#Server = http://archdelta.net/$repo/os/$arch
 
 ## Official
-#Server = http://ftp.archlinux.org/$repo/os/i686
-Server = ftp://ftp.archlinux.org/$repo/os/i686
+Server = ftp://ftp.archlinux.org/$repo/os/$arch
+#Server = http://ftp.archlinux.org/$repo/os/$arch
 
 ## Any
 #Server = ftp://mirrors.kernel.org/archlinux/$repo/os/$arch
