@@ -5,17 +5,21 @@ app-editors/gvim                -netbeans -nextaw
 #app-shells/bash                 plugins
 
 app-i18n/ibus                   gconf -vala
+# build for ibus framework
+app-i18n/sunpinyin              ibus -xim
+
 
 # allow eix to use the sqlite backend of portage
 app-portage/eix                 sqlite
 
-# build for ibus framework
-app-i18n/sunpinyin              ibus -xim
+dev-db/mysql                    embedded
 
 dev-vcs/bzr                     -sftp
 dev-vcs/git                     bash-completion subversion 
 dev-vcs/subversion              -dso 
 dev-lang/python                 sqlite
+
+# dev-python/PyQt4                assistant
 
 kde-base/kdepimlibs             semantic-desktop
 kde-base/kdelibs                semantic-desktop
@@ -33,7 +37,7 @@ media-sound/audacious           chardet
 media-sound/cmus                wma
 media-sound/deadbeef            ffmpeg wavpack pulseaudio
 media-sound/kid3                -handbook
-media-sound/phonon              pulseaudio
+media-sound/phonon              pulseaudio -gstreamer
 media-sound/pulseaudio          -hal
 media-video/mplayer             enca real vdpau ssse3 shm -gmplayer -lirc -xscreensaver 
 media-video/vlc                 pulseaudio libass
@@ -87,7 +91,7 @@ x11-misc/redshift               -gtk
 # ---
 # BEGIN: net-misc/slimrat-1.0
 # ---
-=dev-lang/perl-5.10.1 ithreads
+>=dev-lang/perl-5.10.1 ithreads
 # ---
 # END: net-misc/slimrat-1.0
 # ---
@@ -104,6 +108,20 @@ sys-block/parted	        device-mapper
 # END: x11-misc/pcmanfm-9999
 # ---
 
+=x11-base/xorg-server-1.7.7-r1  hal
+
+# ---
+# BEGIN: dev-python/sip-4.12
+# ---
+# ---
+# END: dev-python/sip-4.12
+# ---
 
 
+# ---
+# BEGIN: x11-themes/oxygen-gtk-9999
+# ---
+# ---
+# END: x11-themes/oxygen-gtk-9999
+# ---
 
