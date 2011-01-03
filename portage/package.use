@@ -15,8 +15,9 @@ app-portage/eix                 sqlite
 dev-db/mysql                    embedded
 
 dev-vcs/bzr                     -sftp
-dev-vcs/git                     bash-completion subversion 
-dev-vcs/subversion              -dso 
+# perl is for git-difftool
+dev-vcs/git                     bash-completion subversion perl
+dev-vcs/subversion              -dso perl
 dev-lang/python                 sqlite
 
 # dev-python/PyQt4                assistant
