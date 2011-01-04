@@ -109,20 +109,24 @@ sys-block/parted	        device-mapper
 # END: x11-misc/pcmanfm-9999
 # ---
 
-=x11-base/xorg-server-1.7.7-r1  hal
 
-# ---
-# BEGIN: dev-python/sip-4.12
-# ---
-# ---
-# END: dev-python/sip-4.12
-# ---
+
 
 
 # ---
-# BEGIN: x11-themes/oxygen-gtk-9999
+# BEGIN: app-i18n/fbterm-1.6
+app-i18n/fbterm  gpm
 # ---
 # ---
-# END: x11-themes/oxygen-gtk-9999
+# END: app-i18n/fbterm-1.6
+# ---
+
+
+
+# ---
+# BEGIN: sys-apps/chname-1.0-r1
+# ---
+# ---
+# END: sys-apps/chname-1.0-r1
 # ---
 
