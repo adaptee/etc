@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# force Rebuild Gentoo init.d service dependency tree.
+depscan.sh --update
