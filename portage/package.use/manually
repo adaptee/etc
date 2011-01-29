@@ -1,11 +1,12 @@
-=sys-fs/udev-151-r4 extras
+=sys-fs/udev-151-r4             extras
 
-app-admin/conky                 truetype -ipv6
 app-editors/gvim                -netbeans -nextaw
-#app-shells/bash                 plugins
 
+# I do not need vala binding
 app-i18n/ibus                   gconf -vala
-# build for ibus framework
+app-i18n/fbterm                 gpm
+
+# build for ibus only
 app-i18n/sunpinyin              ibus -xim
 
 
@@ -13,38 +14,46 @@ app-i18n/sunpinyin              ibus -xim
 app-portage/eix                 sqlite
 
 dev-db/mysql                    embedded
+virtual/mysql                   embedded
 
+# I do not need support for sftp
 dev-vcs/bzr                     -sftp
-# perl is for git-difftool
-dev-vcs/git                     bash-completion subversion perl
-dev-vcs/subversion              -dso perl
+
+# `perl` is for git-difftool and git-svn
+dev-vcs/git                     bash-completion subversion perl -gtk
+dev-vcs/subversion              perl -dso 
+
+# why not?
 dev-lang/python                 sqlite
 
-# dev-python/PyQt4                assistant
+
+# I am only interested with python binding
+kde-base/kdebinginds-meta       -java -csharp -perl -ruby
 
 kde-base/kdepimlibs             semantic-desktop
 kde-base/kdelibs                semantic-desktop
+#kde-base/phonon-kde             xine
+#kde-base/smoke                  phonon
+
+
 # support .djvu format
 kde-base/okular                 djvu
 
 # make sure unrar is insalled, so that comix can view rar archive directly
 media-gfx/comix                 unrar
 
-media-libs/gd                   fontconfig
-
-media-plugins/gst-plugins-meta  pulseaudio flac taglib ffmpeg
 media-plugins/audacious-plugins cue
 media-sound/audacious           chardet
 media-sound/cmus                wma
-media-sound/deadbeef            ffmpeg wavpack pulseaudio
-media-sound/kid3                -handbook
-media-sound/phonon              pulseaudio -gstreamer
+media-sound/deadbeef            tta ape
+media-sound/phonon              -gstreamer xcb xine
 media-sound/pulseaudio          -hal
 media-video/mplayer             enca real vdpau ssse3 shm -gmplayer -lirc -xscreensaver 
-media-video/vlc                 pulseaudio libass
+media-video/vlc                 libass
 
 # only use console version
 net-analyzer/mtr                -gtk
+net-analyzer/nmap               -gtk
 
 
 # I do not need such advanced features
@@ -66,16 +75,25 @@ net-p2p/ktorrent                -upnp  -zeroconf -magnetgenerator -mediaplayer -
 # only use it as a DNS cacher
 net-dns/dnsmasq                 -dhcp -tftp
 
-# I use wicd-client-kde as gui
+# I use wicd-kde as gui front for wicd
 net-misc/wicd                   -gtk
+
+# do not nedd GUi frontend
 net-misc/slimrat                -X
 
 # 'crypt' will introduce cryptsetup, which in-turn introduce lvm2....
 sys-apps/hal                    -crypt
+
 # do not need translated manpages!
 sys-apps/man-pages              -linguas_zh_CN
 
 sys-apps/paludis                python-bindings vim-syntax 
+
+# I do not use encrypted partitio/device
+sys-apps/pmount                 -crypt
+
+# I do not use LVM2
+sys-block/parted                device-mapper
 
 # I only use KDE
 www-client/opera                -gtk
@@ -87,46 +105,10 @@ x11-libs/cairo                  cleartype lcdfilter
 x11-misc/redshift               -gtk
 
 
-
-
-# ---
-# BEGIN: net-misc/slimrat-1.0
-# ---
->=dev-lang/perl-5.10.1 ithreads
-# ---
-# END: net-misc/slimrat-1.0
-# ---
-
-
-# ---
-# BEGIN: x11-misc/pcmanfm-9999
-# ---
 x11-misc/pcmanfm                udev -hal
 x11-libs/libfm                  udev udisks -hal
-# I do not use LVM2
-sys-block/parted	        device-mapper
-# ---
-# END: x11-misc/pcmanfm-9999
-# ---
 
 
-
-
-
-# ---
-# BEGIN: app-i18n/fbterm-1.6
-app-i18n/fbterm  gpm
-# ---
-# ---
-# END: app-i18n/fbterm-1.6
-# ---
-
-
-
-# ---
-# BEGIN: sys-apps/chname-1.0-r1
-# ---
-# ---
-# END: sys-apps/chname-1.0-r1
-# ---
+# for kde4.6
+dev-python/PyQt4                declarative
 
