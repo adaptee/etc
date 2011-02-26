@@ -92,6 +92,8 @@ sys-apps/paludis                python-bindings vim-syntax
 # I do not use encrypted partitio/device
 sys-apps/pmount                 -crypt
 
+sys-auth/polkit                 -gtk
+
 # I do not use LVM2
 sys-block/parted                device-mapper
 
@@ -104,11 +106,13 @@ x11-libs/cairo                  cleartype lcdfilter
 # do not need gui
 x11-misc/redshift               -gtk
 
+x11-misc/pcmanfm                udev 
+x11-libs/libfm                  udev udisks 
 
-x11-misc/pcmanfm                udev -hal
-x11-libs/libfm                  udev udisks -hal
+
 
 
 # for kde4.6
 dev-python/PyQt4                declarative
 
+media-sound/phonon              xine -vlc 
