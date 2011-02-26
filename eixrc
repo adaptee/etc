@@ -32,8 +32,7 @@
 
 # take advantage of the sqlite backend of portage cache
 PORTDIR_CACHE_METHOD='sqlite'
-OVERLAY_CACHE_METHOD='sqlite'
 
-
-
+# this actually should not be setted
+#OVERLAY_CACHE_METHOD='sqlite'
 
