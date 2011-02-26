@@ -1,2 +1,0 @@
-#>app-shells/bash-completion-1.1-r5
-<sys-apps/portage-2.2_rc96
