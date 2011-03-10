@@ -1,0 +1,31 @@
+#!/bin/sh -e
+echo "Adding my custom Linux to GRUB 2"
+cat <<EOF
+menuentry "Arch" {
+set root=(hd0,5)
+linux /boot/vmlinuz26 root=/dev/sda1 quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792 
+initrd /boot/kernel26.img
+}
+
+menuentry "Kubuntu" {
+set root=(hd0,5)
+linux /boot/vmlinuz-2.6.35-27-generic root=/dev/sda2 quiet ro quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792
+initrd /boot/initrd.img-2.6.35-27-generic 
+}
+
+menuentry "Gentoo" {
+set root=(hd0,5)
+linux /boot/gentoo-kernel-zen root=/dev/sda3 quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792
+}
+
+menuentry "aLFS" {
+set root=(hd0,5)
+linux /boot/alfs-kernel root=/dev/sda13 quiet ipv6.disable=1 
+}
+
+menuentry "LFS" {
+set root=(hd0,5)
+linux /boot/lfs-kernel root=/dev/sda14 quiet ipv6.disable=1 
+}
+
+EOF
