@@ -1,6 +1,8 @@
 #!/bin/sh -e
 echo "Adding my custom Linux to GRUB 2"
-cat <<EOF
+
+# EOF is quoted,  in order to prevent variable expansion within `here document`
+cat <<'EOF'
 menuentry "Arch" {
 set root=(hd0,5)
 linux /boot/vmlinuz26 root=/dev/sda1 quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792 
@@ -26,6 +28,77 @@ linux /boot/alfs-kernel root=/dev/sda13 quiet ipv6.disable=1
 menuentry "LFS" {
 set root=(hd0,5)
 linux /boot/lfs-kernel root=/dev/sda14 quiet ipv6.disable=1 
+}
+
+menuentry "Arch Loop" {
+insmod part_msdos
+insmod reiserfs
+insmod ext2
+insmod loopback
+loopback loop (hd0,msdos10)/arch-i686.img
+linux  /boot/arch-loop  real_root=loop=/dev/sda10 loopfile=arch-i686.img quiet
+initrd /boot/arch-loop.img
+
+#set root=(loop)
+#linux /boot/vmlinuz26 real_root=loop=/dev/sda10 loopfile=arch-i686.img  
+#initrd /boot/kernel26-fallback.img
+}
+
+menuentry "A" {
+insmod part_msdos
+insmod reiserfs
+insmod ext2
+insmod loopback
+loopback loop (hd0,msdos10)/a.img
+linux  /boot/arch-loop  real_root=loop=/dev/sda10 loopfile=a.img quiet
+initrd /boot/arch-loop.img
+}
+
+menuentry "ArchISO" {
+insmod loopback
+insmod reiserfs
+loopback loop (hd0,msdos10)/iso/arch.iso
+set root=(loop)
+linux  /arch/boot/i686/vmlinuz26 img_dev=/dev/sda10 img_loop=/iso/arch.iso archisobasedir=arch archisolabel=ARCH_201103 quiet 
+initrd /arch/boot/i686/archiso.img
+}
+
+menuentry "grml" {
+  iso_path=/iso/grml_2010.12.iso
+  export iso_path
+  search --set --file $iso_path
+  loopback loop $iso_path
+  set root=(loop)
+  configfile /boot/grub/loopback.cfg
+}
+
+menuentry "Ubuntu Desktop ISO" {
+  iso_path=/iso/ubuntu-10.10-desktop-i386.iso
+  export iso_path
+  search --set --file $iso_path
+  loopback loop $iso_path
+  root=(loop)
+  configfile /boot/grub/loopback.cfg
+}
+
+
+menuentry "Gentoo mininal ISO" {
+insmod loopback
+insmod reiserfs
+loopback loop (hd0,msdos10)/iso/install-x86-minimal-20110308.iso
+set root=(loop)
+linux /isolinux/gentoo root=/dev/ram0 init=/linuxrc looptype=squashfs loop=/image.squashfs cdroot isoboot=/iso/install-x86-minimal-20110308.iso
+initrd /isolinux/gentoo.igz
+
+}
+
+menuentry "Gentoo DVD ISO" {
+insmod loopback
+insmod reiserfs
+loopback loop (hd0,msdos10)/iso/gentoo-dvd.iso
+set root=(loop)
+linux /boot/gentoo root=/dev/ram0 init=/linuxrc looptype=squashfs loop=/image.squashfs cdroot isoboot=/iso/gentoo.iso
+initrd /boot/gentoo.igz
 }
 
 EOF
