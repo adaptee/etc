@@ -94,9 +94,6 @@ sys-apps/pmount                 -crypt
 
 sys-auth/polkit                 -gtk
 
-# I do not use LVM2
-sys-block/parted                device-mapper
-
 # I only use KDE
 www-client/opera                -gtk
 
