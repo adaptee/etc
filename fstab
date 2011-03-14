@@ -7,7 +7,7 @@ proc                /proc               proc            defaults                
 /dev/sda3           /                   reiserfs        relatime                        0       0
 /dev/sda5           /boot               ext3            relatime                        0       0
 /sqfs/usr.gz        /sqfs/usr/ro        squashfs        loop,ro                         0       0
-none                /usr                aufs            udba=reval,br:/sqfs/usr/rw:/sqfs/usr/ro           0       0
+none                /usr                aufs            udba=reval,br:/sqfs/usr/rw=rw:/sqfs/usr/ro=rr           0       0
 /dev/sda12          none                swap            sw                              0       0
 
 devpts              /dev/pts            devpts          defaults                        0       0
