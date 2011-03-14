@@ -1,5 +1,5 @@
 #! /bin/sh
 
 # eix-sync = "emerge --sync" + "eix-update"
-eix-sync
+eix-sync 1>/dev/null 2>/dev/null
 
