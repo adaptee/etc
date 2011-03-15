@@ -1,27 +1,65 @@
 # If you change this file, run 'update-grub' afterwards to update
 # /boot/grub/grub.cfg.
 
+# The default menu entry, zero based
 GRUB_DEFAULT=0
-#GRUB_HIDDEN_TIMEOUT=5
-#GRUB_HIDDEN_TIMEOUT_QUIET=true
-GRUB_TIMEOUT=10
-GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-GRUB_CMDLINE_LINUX=""
 
-# Uncomment to disable graphical terminal (grub-pc only)
+# only useful if `GRUB_DEFAULT=saved` 
+#GRUB_SAVEDEFAULT=true
+
+# Boot the default entry this many seconds after the menu is displayed, 
+# unless a key is pressed.
+GRUB_TIMEOUT=5
+
+# Wait this many seconds for a key to be pressed before displaying the menu
+GRUB_HIDDEN_TIMEOUT=2
+
+# suppress the verbose countdown while waiting for a key to be pressed
+#GRUB_HIDDEN_TIMEOUT_QUIET=true
+
+# used to generate  more informative menu entry titles.
+GRUB_DISTRIBUTOR="Arch Linux"
+
+# Uncomment to disable graphical terminal
 #GRUB_TERMINAL=console
 
-# The resolution used on graphical terminal
+GRUB_CMDLINE_LINUX=""
+GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+
+# Make GRUB to pass to the Linux kernel the old parameter 
+# format "root=/dev/xxx" instead of "root=UUID=...." 
+GRUB_DISABLE_LINUX_UUID=true
+
+# disable the generation of recovery mode menu entries
+GRUB_DISABLE_RECOVERY="true"
+
+# Set the resolution used on the gfxterm graphical terminal.
 # note that you can use only modes which your graphic card supports via VBE
 # you can see them in real GRUB with the command `vbeinfo'
-#GRUB_GFXMODE=640x480
+#GRUB_GFXMODE="1024x768x24"
+#GRUB_GFXMODE="640x480"
 
-# Uncomment if you don't want GRUB to pass "root=UUID=xxx" parameter to Linux
-#GRUB_DISABLE_LINUX_UUID=true
+# Set a background image for use with the gfxterm graphical terminal.
+#GRUB_BACKGROUND="/boot/grub/wallpapers/blue.png"
+# Set a theme for use with the gfxterm graphical terminal
+#GRUB_THEME="/path/to/gfxtheme"
 
-# Uncomment to disable generation of recovery mode menu entries
-GRUB_DISABLE_LINUX_RECOVERY="true"
+# Uncomment to allow the kernel use the same resolution used by grub
+#GRUB_GFXPAYLOAD_LINUX=keep
 
-# Uncomment to get a beep at grub start
+# Uncomment and set to the desired menu colors.  Used by normal and wallpaper 
+# modes only.  Entries specified as foreground/background.
+GRUB_COLOR_NORMAL="light-blue/black"
+GRUB_COLOR_HIGHLIGHT="light-cyan/blue"
+
+# Normally, `grub-mkconfig` will try to use the external `os-prober` program, if
+# installed, to discover other operating systems installed on the same system and
+# generate appropriate menu entries for them. 
+GRUB_DISABLE_OS_PROBER=true
+
+# Play a tune on the speaker when GRUB starts
 #GRUB_INIT_TUNE="480 440 1"
+
+# This option may be set to a list of GRUB module names separated by spaces.
+# Each module will be loaded as early as possible, at the start of grub.cfg
+GRUB_PRELOAD_MODULES="png"
