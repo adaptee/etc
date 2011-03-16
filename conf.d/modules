@@ -1,0 +1,44 @@
+# You can define a list modules for a specific kernel version,
+# a released kernel version, a main kernel version or just a list.
+#modules_2_6_23_gentoo_r5="ieee1394 ohci1394"
+#modules_2_6_23="tun ieee1394"
+#modules_2_6="tun"
+#modules="ohci1394"
+
+# You can give modules a different name when they load - the new name
+# will also be used to pick arguments below.
+#modules="dummy:dummy1"
+
+# Give the modules some arguments if needed, per version if necessary.
+#module_ieee1394_args="debug"
+#module_ieee1394_args_2_6_23_gentoo_r5="ieee1394 ohci1394"
+#module_ieee1394_args_2_6_23="tun ieee1394"
+#module_ieee1394_args_2_6="tun"
+
+# You should consult your kernel documentation and configuration
+# for a list of modules and their options.
+
+modules_2_6="${modules_2_6} intel_agp"
+module_intel_agp_args_2_6=""
+
+modules_2_6="${modules_2_6} nvidia"
+module_nvidia_args_2_6=""
+
+modules_2_6="${modules_2_6} vboxdrv"
+module_vboxdrv_args_2_6=""
+
+modules_2_6="${modules_2_6} vboxnetflt"
+module_vboxnetflt_args_2_6=""
+
+modules_2_6="${modules_2_6} vboxnetadp"
+module_vboxnetadp_args_2_6=""
+
+modules_2_6="${modules_2_6} iwlcore"
+module_iwlcore_args_2_6=""
+
+modules_2_6="${modules_2_6} iwl3945"
+module_iwl3945_args_2_6=""
+
+modules_2_6="${modules_2_6} fuse"
+module_fuse_args_2_6=""
+
