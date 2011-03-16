@@ -1,0 +1,70 @@
+# sudoers file.
+#
+# This file MUST be edited with the 'visudo' command as root.
+# Failure to use 'visudo' may result in syntax or file permission errors # that prevent sudo from running.
+#
+# See the sudoers man page for the details on how to write a sudoers file.
+#
+
+# always set $HOME to the home directory of the target user
+#Defaults       always_set_home
+
+# keep the original user's enriroment(dangerous)
+#Defaults       !env_reset
+
+# sudo will ignore '.' n the PATH environment variable;
+# the PATH itself is not modified.
+Defaults       ignore_dot
+
+# make the default password prompt more user friendly
+Defaults        passprompt="%p@%h's password: "
+
+# provide visual feedback when the user input password
+Defaults        pwfeedback
+
+# increate the timeout of timestamp to 30 minutes
+Defaults        timestamp_timeout=30
+
+# make different tty share single timestamp
+Defaults        !tty_tickets
+
+# save the log via file, instead of syslog
+Defaults        logfile=/var/log/sudo.log
+Defaults        log_year, log_host
+# no line wrapping
+Defaults        loglinelen=0
+
+# allow you to run `sudo command` instead of `sudo /usr/sbin/command`
+Defaults        secure_path="/bin:/sbin:/usr/bin:/usr/sbin"
+
+# insult users when they enter an incorrect password
+Defaults        insults
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# Defaults specification
+
+# Runas alias specification
+
+# User privilege specification
+# When multiple entries match for a user, they are applied in order. Where there
+# are multiple matches, the last match is used (which is not necessarily the most
+# specific match).
+
+root     ALL=(ALL) ALL
+
+# Uncomment to allow people in group wheel to run all commands
+%wheel  ALL=(ALL)  ALL
+
+
+# Same thing without a password
+# %wheel        ALL=(ALL) NOPASSWD: ALL
+
+# Samples
+# %users  ALL=/sbin/mount /cdrom,/sbin/umount /cdrom
+# %users  localhost=/sbin/shutdown -h now
+
