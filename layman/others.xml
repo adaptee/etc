@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name><![CDATA[adaptee]]></name>
+    <description><![CDATA[Some ebuilds for personal use.]]></description>
+    <homepage>https://github.com/adaptee/overlay</homepage>
+    <owner>
+      <email>adaptee@gmail.com</email>
+    </owner>
+    <source type="git">git://github.com/adaptee/overlay.git</source>
+  </repo>
+</repositories>
