@@ -45,7 +45,7 @@ media-gfx/comix                 unrar
 media-plugins/audacious-plugins cue
 media-sound/audacious           chardet
 media-sound/cmus                wma
-media-sound/deadbeef            tta ape
+media-sound/deadbeef            tta ape -pulseaudio
 media-sound/phonon              -gstreamer xcb xine
 media-sound/pulseaudio          -hal
 media-video/mplayer             enca real vdpau ssse3 shm -gmplayer -lirc -xscreensaver 
