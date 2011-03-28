@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# swap Esc and CapsLock, for vimmer !
+echo "keycode 58 = Escape" | loadkeys -

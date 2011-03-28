@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# save core dump in one location ,and with better name
+# executable-signalnumber.core
+mkdir /tmp/coredump/
+echo '/tmp/coredump/%e-%s.core' > /proc/sys/kernel/core_pattern
+chown -R whodare:whodare /tmp/coredump
