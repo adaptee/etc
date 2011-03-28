@@ -1,23 +1,15 @@
-=sys-fs/udev-151-r4             extras
-
-app-editors/gvim                -netbeans -nextaw
-
 # I do not need vala binding
-app-i18n/ibus                   gconf -vala
+#app-i18n/ibus                   gconf -vala
+
+# fbterm can't build without gpm
 app-i18n/fbterm                 gpm
-
-# build for ibus only
-app-i18n/sunpinyin              ibus -xim
-
 
 # allow eix to use the sqlite backend of portage
 app-portage/eix                 sqlite
 
-dev-db/mysql                    embedded
-virtual/mysql                   embedded
 
 # I do not need support for sftp
-dev-vcs/bzr                     -sftp
+#dev-vcs/bzr                     -sftp
 
 # `perl` is for git-difftool and git-svn
 dev-vcs/git                     bash-completion subversion perl -gtk
@@ -32,12 +24,11 @@ kde-base/kdebinginds-meta       -java -csharp -perl -ruby
 
 kde-base/kdepimlibs             semantic-desktop
 kde-base/kdelibs                semantic-desktop
-#kde-base/phonon-kde             xine
-#kde-base/smoke                  phonon
 
 
 # support .djvu format
 kde-base/okular                 djvu
+
 
 # make sure unrar is insalled, so that comix can view rar archive directly
 media-gfx/comix                 unrar
@@ -45,9 +36,12 @@ media-gfx/comix                 unrar
 media-plugins/audacious-plugins cue
 media-sound/audacious           chardet
 media-sound/cmus                wma
+
+# currently, the pulseaudio plugin is broken
 media-sound/deadbeef            tta ape -pulseaudio
-media-sound/phonon              -gstreamer xcb xine
-media-sound/pulseaudio          -hal
+
+media-sound/phonon              xine vlc -gstreamer  
+
 media-video/mplayer             enca real vdpau ssse3 shm -gmplayer -lirc -xscreensaver 
 media-video/vlc                 libass
 
@@ -70,6 +64,7 @@ net-misc/aria2                  metalink bittorrent
 net-p2p/amule                   daemon remote geoip -upnp -stats
 
 net-p2p/ktorrent                -upnp  -zeroconf -magnetgenerator -mediaplayer -webinterface 
+
 #net-p2p/rtorrent                daemon
 
 # only use it as a DNS cacher
@@ -79,20 +74,20 @@ net-dns/dnsmasq                 -dhcp -tftp
 net-misc/wicd                   -gtk
 
 # do not nedd GUi frontend
-net-misc/slimrat                -X
-
-# 'crypt' will introduce cryptsetup, which in-turn introduce lvm2....
-sys-apps/hal                    -crypt
+#net-misc/slimrat                -X
 
 # do not need translated manpages!
 sys-apps/man-pages              -linguas_zh_CN
 
-sys-apps/paludis                python-bindings vim-syntax 
+#sys-apps/paludis                python-bindings vim-syntax 
 
 # I do not use encrypted partitio/device
 sys-apps/pmount                 -crypt
 
 sys-auth/polkit                 -gtk
+
+# support lzo compression
+sys-fs/squashfs-tools           lzo
 
 # I only use KDE
 www-client/opera                -gtk
@@ -100,16 +95,28 @@ www-client/opera                -gtk
 # apply patches provided by ubuntu
 x11-libs/cairo                  cleartype lcdfilter
 
+# use udisks to mount USB sticks
+x11-libs/libfm                  udev udisks 
+
 # do not need gui
 x11-misc/redshift               -gtk
 
-x11-misc/pcmanfm                udev 
-x11-libs/libfm                  udev udisks 
 
 
+# ----------------- Temporary ---------------------- #
 
+dev-db/mysql                    embedded
+virtual/mysql                   embedded
+
+# for kdevelop
+=dev-util/kdevplatform-1.2.0    subversion
+
+# for building xulrunner-2.0
+media-libs/libpng               apng
 
 # for kde4.6
 dev-python/PyQt4                declarative
 
-media-sound/phonon              xine -vlc 
+# binary nvidia driver does not support this infrastruture
+#media-libs/mesa                 -gallium
+
