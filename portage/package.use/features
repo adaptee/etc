@@ -70,7 +70,7 @@ net-p2p/ktorrent                -upnp  -zeroconf -magnetgenerator -mediaplayer -
 net-dns/dnsmasq                 -dhcp -tftp
 
 # I use wicd-kde as gui front for wicd
-net-misc/wicd                   -gtk
+net-misc/wicd                   -gtk -X
 
 # do not nedd GUi frontend
 #net-misc/slimrat                -X
