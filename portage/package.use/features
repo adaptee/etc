@@ -39,7 +39,7 @@ media-sound/cmus                wma
 
 media-sound/deadbeef            tta ape 
 
-media-sound/phonon              xine vlc -gstreamer  
+media-libs/phonon               xine vlc -gstreamer  
 
 media-video/mplayer             enca real vdpau ssse3 shm -gmplayer -lirc -xscreensaver 
 media-video/vlc                 libass
@@ -104,18 +104,19 @@ x11-misc/redshift               -gtk
 
 # ----------------- Temporary ---------------------- #
 
+# for amraok-2.4.x
 dev-db/mysql                    embedded
 virtual/mysql                   embedded
 
-# for kdevelop
+# for kdevelop-4.2.0
 =dev-util/kdevplatform-1.2.0    subversion
 
 # for building xulrunner-2.0
 media-libs/libpng               apng
 
-# for kde4.6
+# for kde-4.6.1
 dev-python/PyQt4                declarative
 
 # binary nvidia driver does not support this infrastruture
-#media-libs/mesa                 -gallium
+media-libs/mesa                 -gallium
 
