@@ -37,8 +37,7 @@ media-plugins/audacious-plugins cue
 media-sound/audacious           chardet
 media-sound/cmus                wma
 
-# currently, the pulseaudio plugin is broken
-media-sound/deadbeef            tta ape -pulseaudio
+media-sound/deadbeef            tta ape 
 
 media-sound/phonon              xine vlc -gstreamer  
 
