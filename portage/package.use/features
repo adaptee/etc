@@ -41,6 +41,9 @@ media-sound/deadbeef            tta ape
 
 media-libs/phonon               xine vlc -gstreamer  
 
+# binary nvidia driver does not support this infrastruture
+media-libs/mesa                 -gallium
+
 media-video/mplayer             enca real vdpau ssse3 shm -gmplayer -lirc -xscreensaver 
 media-video/vlc                 libass
 
@@ -117,6 +120,4 @@ media-libs/libpng               apng
 # for kde-4.6.1
 dev-python/PyQt4                declarative
 
-# binary nvidia driver does not support this infrastruture
-media-libs/mesa                 -gallium
-
+media-libs/libsdl               joystick
