@@ -33,6 +33,7 @@
 # take advantage of the sqlite backend of portage cache
 PORTDIR_CACHE_METHOD='sqlite'
 
-# this actually should not be setted
-#OVERLAY_CACHE_METHOD='sqlite'
+OVERLAY_CACHE_METHOD='parse|ebuild*'
+# speed up the parsing of kde overlay 
+CACHE_METHOD='/var/lib/layman/kde parse %{ADD_CACHE_METHOD}'
 
