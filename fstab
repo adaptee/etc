@@ -6,8 +6,8 @@
 proc                /proc               proc            defaults                        0       0
 /dev/sda3           /                   reiserfs        relatime                        0       0
 /dev/sda5           /boot               ext3            relatime                        0       0
-/sqfs/usr.gz        /sqfs/usr/ro        squashfs        loop,ro                         0       0
-none                /usr                aufs            udba=reval,br:/sqfs/usr/rw=rw:/sqfs/usr/ro=rr           0       0
+#/sqfs/usr.lzo       /sqfs/usr/ro        squashfs        loop,ro                         0       0
+#none                /usr                aufs            udba=reval,br:/sqfs/usr/rw=rw:/sqfs/usr/ro=rr           0       0
 /dev/sda12          none                swap            sw                              0       0
 
 devpts              /dev/pts            devpts          defaults                        0       0
@@ -17,11 +17,8 @@ tmpfs               /tmp                tmpfs           nosuid,mode=1777,size=1G
 /dev/cdrom          /media/cd           auto            ro,user,noauto,unhide           0       0
 /dev/dvd            /media/dvd          auto            ro,user,noauto,unhide           0       0
 
-none                /proc/bus/usb       usbfs           noauto,defaults                 0       0
-
-
 /dev/sda1           /mnt/arch           reiserfs        rw,relatime                     0       0
-/dev/sda2           /mnt/kubuntu        reiserfs        rw,relatime                     0       0
+/dev/sda13          /mnt/kubuntu        reiserfs        rw,relatime                     0       0
 
 /dev/sda6           /home/whodare/audio reiserfs        rw,relatime                     0       0
 /dev/sda7           /home/whodare/book  reiserfs        rw,relatime                     0       0
@@ -31,6 +28,9 @@ none                /proc/bus/usb       usbfs           noauto,defaults         
 
 /dev/sda11          /mnt/personal       reiserfs        rw,relatime                     0       0
 
+# improve the speed of emerge
+/sqfs/portage.db    /portage            reiserfs        rw,relatime                     0       0
+/home/whodare/vbox/arch.img  /mnt/loop   reiserfs        loop,relatime                   0       0
 
 
 
