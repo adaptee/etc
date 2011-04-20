@@ -42,3 +42,5 @@ module_iwl3945_args_2_6=""
 modules_2_6="${modules_2_6} fuse"
 module_fuse_args_2_6=""
 
+modules_2_6="${modules_2_6} btrfs"
+module_fuse_args_2_6=""
