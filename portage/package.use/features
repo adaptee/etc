@@ -5,7 +5,8 @@
 app-i18n/fbterm                 gpm
 
 # allow eix to use the sqlite backend of portage
-app-portage/eix                 sqlite
+# optimize! optimize! optimize!
+app-portage/eix                 sqlite optimization strong-optimization -bzip2 
 
 
 # I do not need support for sftp
@@ -23,6 +24,9 @@ kde-base/kdebinginds-meta       -java -csharp -perl -ruby
 
 # support .djvu format
 kde-base/okular                 djvu
+
+# support wlm
+kde-base/kopete                 msn
 
 # make sure unrar is insalled, so that comix can view rar archive directly
 media-gfx/comix                 unrar
@@ -50,7 +54,7 @@ net-analyzer/nmap               -gtk
 net-fs/samba                    winbind -ads -cluster -quota
 
 # support qq protocol
-net-im/pidgin                   qq -perl
+net-im/pidgin                   qq -perl -ncurses
 
 net-libs/libproxy               -xulrunner
 
@@ -71,6 +75,9 @@ net-misc/wicd                   -gtk -X
 
 # do not nedd GUi frontend
 #net-misc/slimrat                -X
+
+# I do not use syslog over network
+app-admin/syslog-ng              -ssl -tcpd
 
 # do not need translated manpages!
 sys-apps/man-pages              -linguas_zh_CN
@@ -114,4 +121,13 @@ media-libs/libpng               apng
 # for kde-4.6.1
 dev-python/PyQt4                declarative
 
-media-libs/libsdl               joystick
+# needed for building splashutils
+=media-libs/lcms-1.19           static-libs
+=media-libs/libpng-1.4.5        static-libs
+=virtual/jpeg-0                 static-libs
+=media-libs/jpeg-8c             static-libs
+=media-libs/libmng-1.0.10-r1    static-libs
+
+
+media-gfx/splashutils           fbcondecor
+
