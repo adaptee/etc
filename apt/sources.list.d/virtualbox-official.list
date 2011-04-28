@@ -1,2 +1,2 @@
 # virtualbox
-deb http://download.virtualbox.org/virtualbox/debian maverick contrib
+deb http://download.virtualbox.org/virtualbox/debian natty contrib

@@ -1,2 +1,2 @@
-deb http://ppa.launchpad.net/kubuntu-ppa/backports/ubuntu maverick main
-deb-src http://ppa.launchpad.net/kubuntu-ppa/backports/ubuntu maverick main
+deb http://ppa.launchpad.net/kubuntu-ppa/backports/ubuntu natty main
+deb-src http://ppa.launchpad.net/kubuntu-ppa/backports/ubuntu natty main
