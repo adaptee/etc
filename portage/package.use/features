@@ -1,5 +1,5 @@
 # I do not need vala binding
-#app-i18n/ibus                   gconf -vala
+app-i18n/ibus                   gconf -vala
 
 # fbterm can't build without gpm
 app-i18n/fbterm                 gpm
