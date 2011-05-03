@@ -1,2 +1,2 @@
 # devel branches ; dependent upon  kubuntu-ppa/ppa
-deb http://ppa.launchpad.net/blca/published/ubuntu maverick main
+deb http://ppa.launchpad.net/blca/published/ubuntu natty main
