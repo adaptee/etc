@@ -20,37 +20,13 @@ set root=(hd0,5)
 linux /boot/gentoo-kernel-zen root=/dev/sda3 quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792
 }
 
-menuentry "aLFS" {
-set root=(hd0,5)
-linux /boot/alfs-kernel root=/dev/sda13 quiet ipv6.disable=1 
-}
-
-menuentry "LFS" {
-set root=(hd0,5)
-linux /boot/lfs-kernel root=/dev/sda14 quiet ipv6.disable=1 
-}
-
 menuentry "Arch Loop" {
 insmod part_msdos
 insmod reiserfs
 insmod ext2
 insmod loopback
-loopback loop (hd0,msdos10)/arch-i686.img
-linux  /boot/arch-loop  real_root=loop=/dev/sda10 loopfile=arch-i686.img quiet
-initrd /boot/arch-loop.img
-
-#set root=(loop)
-#linux /boot/vmlinuz26 real_root=loop=/dev/sda10 loopfile=arch-i686.img  
-#initrd /boot/kernel26-fallback.img
-}
-
-menuentry "A" {
-insmod part_msdos
-insmod reiserfs
-insmod ext2
-insmod loopback
-loopback loop (hd0,msdos10)/a.img
-linux  /boot/arch-loop  real_root=loop=/dev/sda10 loopfile=a.img quiet
+loopback loop (hd0,msdos10)/arch.img
+linux  /boot/arch-loop  real_root=loop=/dev/sda10 loopfile=arch.img quiet
 initrd /boot/arch-loop.img
 }
 
