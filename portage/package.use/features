@@ -37,7 +37,14 @@ media-sound/cmus                wma
 
 media-sound/deadbeef            tta ape 
 
+# pulseaudio is enough
+media-sound/libcanberra         -gstreamer
+
 media-libs/phonon               xine vlc -gstreamer  
+
+# do not need `start-pulseaudio-x11`;
+# do not need its network transparency
+media-sound/pulseaudio          -X -tcpd
 
 # binary nvidia driver does not support this infrastruture
 media-libs/mesa                 -gallium
@@ -133,4 +140,7 @@ media-libs/libpng               static-libs
 
 
 media-gfx/splashutils           fbcondecor
+
+
+kde-base/systemsettings         -gtk
 
