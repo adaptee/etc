@@ -1,0 +1,2 @@
+# no need for gtk3
+>=x11-libs/gtk+-3.0.0
