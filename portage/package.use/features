@@ -141,6 +141,3 @@ media-libs/libpng               static-libs
 
 media-gfx/splashutils           fbcondecor
 
-
-kde-base/systemsettings         -gtk
-
