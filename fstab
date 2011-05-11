@@ -27,10 +27,13 @@ tmpfs               /tmp                tmpfs           nosuid,mode=1777,size=1G
 /dev/sda10          /home/whodare/vbox  reiserfs        rw,relatime                     0       0
 
 /dev/sda11          /mnt/personal       reiserfs        rw,relatime                     0       0
+/dev/sda14          /mnt/chakra         ext4            rw,relatime                     0       0
 
 # improve the speed of emerge
 /sqfs/portage.db    /portage            reiserfs        rw,relatime                     0       0
-/home/whodare/vbox/arch.img  /mnt/loop   reiserfs        loop,relatime                   0       0
+/home/whodare/audio/arch.img  /mnt/loop ext4            loop,relatime                   0       0
 
-
+# a example for mounting vfat && ntfs filesystem
+#/dev/sdaX         /mnt/vfat             vfat            rw,utf8                         0       0
+#/dev/sdaY         /mnt/ntfs             ntfs            rw,utf8                         0       0
 
