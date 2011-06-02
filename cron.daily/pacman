@@ -4,10 +4,10 @@
 abs
 
 # download availabe new  version，but do not install 
-pacman -Syw
+#pacman -Syw
 
 # clear the left over of abs compilation
-rm /var/abs/local/* -rf
+#rm /var/abs/local/* -rf
 
 # optimize the pacman database to imporve query speed
 #pacman-optimize && sync
