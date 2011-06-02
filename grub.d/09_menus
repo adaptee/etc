@@ -4,42 +4,61 @@ echo "Adding my custom Linux to GRUB 2"
 # EOF is quoted,  in order to prevent variable expansion within `here document`
 cat <<'EOF'
 menuentry "Arch" {
-set root=(hd0,5)
-linux /boot/vmlinuz26 root=/dev/sda1 quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792 
-initrd /boot/kernel26.img
+    set root=(hd0,5)
+    linux   /boot/vmlinuz26 root=/dev/sda1 quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792 
+    initrd  /boot/kernel26.img
 }
 
-menuentry "Kubuntu" {
-set root=(hd0,5)
-linux /boot/vmlinuz-2.6.35-27-generic root=/dev/sda2 quiet ro quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792
-initrd /boot/initrd.img-2.6.35-27-generic 
+menuentry FreeBSD/PCBSD {
+    set root=(hd0,2)
+    chainloader +1
+
 }
 
 menuentry "Gentoo" {
-set root=(hd0,5)
-linux /boot/gentoo-kernel-zen root=/dev/sda3 quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792
+    set root=(hd0,5)
+    linux   /boot/gentoo-kernel-zen root=/dev/sda3 quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792
 }
+
+menuentry "Kubuntu" {
+    set root=(hd0,5)
+    linux   /boot/vmlinuz-2.6.35-27-generic root=/dev/sda2 quiet ro quiet ipv6.disable=1 video=vesafb:mtrr:3,ywrap vga=792
+    initrd  /boot/initrd.img-2.6.35-27-generic 
+}
+
+menuentry 'Debian GNU/kFreeBSD, with kFreeBSD 8.1-1-686' --class debian --class gnu-kfreebsd --class gnu --class os {
+    insmod part_msdos
+    insmod ext2
+    set root=(hd0,5)
+    search --no-floppy --fs-uuid --set 34be7699-fbad-47e5-88a7-549640992f1f
+    echo   'Loading kernel of FreeBSD 8.1-1-686 ...'
+    kfreebsd  /kfreebsd-8.1-1-686.gz
+    set kFreeBSD.vfs.root.mountfrom=ufs:/dev/ad0s2
+    set kFreeBSD.vfs.root.mountfrom.options=rw
+}
+
 
 menuentry "Arch Loop" {
-insmod part_msdos
-insmod reiserfs
-insmod ext2
-insmod loopback
-loopback loop (hd0,msdos10)/arch.img
-linux  /boot/arch-loop  real_root=loop=/dev/sda10 loopfile=arch.img quiet
-initrd /boot/arch-loop.img
+    insmod part_msdos
+    insmod reiserfs
+    insmod ext2
+    insmod loopback
+    loopback loop (hd0,msdos10)/arch.img
+    set root=(hd0,5)
+    linux  /boot/arch-loop  real_root=loop=/dev/sda10 loopfile=arch.img quiet
+    initrd /boot/arch-loop.img
 }
 
-menuentry "ArchISO" {
-insmod loopback
-insmod reiserfs
-loopback loop (hd0,msdos10)/iso/arch.iso
-set root=(loop)
-linux  /arch/boot/i686/vmlinuz26 img_dev=/dev/sda10 img_loop=/iso/arch.iso archisobasedir=arch archisolabel=ARCH_201103 quiet 
-initrd /arch/boot/i686/archiso.img
+menuentry "Arch ISO" {
+    insmod loopback
+    insmod reiserfs
+    loopback loop (hd0,msdos10)/iso/arch.iso
+    set root=(loop)
+    linux  /arch/boot/i686/vmlinuz26 img_dev=/dev/sda10 img_loop=/iso/arch.iso archisobasedir=arch archisolabel=ARCH_201103 quiet 
+    initrd /arch/boot/i686/archiso.img
 }
 
-menuentry "grml" {
+menuentry "Grml ISO" {
   iso_path=/iso/grml_2010.12.iso
   export iso_path
   search --set --file $iso_path
@@ -59,22 +78,22 @@ menuentry "Ubuntu Desktop ISO" {
 
 
 menuentry "Gentoo mininal ISO" {
-insmod loopback
-insmod reiserfs
-loopback loop (hd0,msdos10)/iso/install-x86-minimal-20110308.iso
-set root=(loop)
-linux /isolinux/gentoo root=/dev/ram0 init=/linuxrc looptype=squashfs loop=/image.squashfs cdroot isoboot=/iso/install-x86-minimal-20110308.iso
-initrd /isolinux/gentoo.igz
+    insmod loopback
+    insmod reiserfs
+    loopback loop (hd0,msdos10)/iso/install-x86-minimal-20110308.iso
+    set root=(loop)
+    linux /isolinux/gentoo root=/dev/ram0 init=/linuxrc looptype=squashfs loop=/image.squashfs cdroot isoboot=/iso/install-x86-minimal-20110308.iso
+    initrd /isolinux/gentoo.igz
 
 }
 
 menuentry "Gentoo DVD ISO" {
-insmod loopback
-insmod reiserfs
-loopback loop (hd0,msdos10)/iso/gentoo-dvd.iso
-set root=(loop)
-linux /boot/gentoo root=/dev/ram0 init=/linuxrc looptype=squashfs loop=/image.squashfs cdroot isoboot=/iso/gentoo.iso
-initrd /boot/gentoo.igz
+    insmod loopback
+    insmod reiserfs
+    loopback loop (hd0,msdos10)/iso/gentoo-dvd.iso
+    set root=(loop)
+    linux /boot/gentoo root=/dev/ram0 init=/linuxrc looptype=squashfs loop=/image.squashfs cdroot isoboot=/iso/gentoo.iso
+    initrd /boot/gentoo.igz
 }
 
 EOF
