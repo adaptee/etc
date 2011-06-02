@@ -2,12 +2,12 @@
 # newer versions of the distribution.
 
 deb http://mirror.bjtu.edu.cn/ubuntu natty main restricted
-deb-src http://mirror.bjtu.edu.cn/ubuntu natty restricted main multiverse universe 
+deb-src http://mirror.bjtu.edu.cn/ubuntu natty restricted main multiverse universe
 
 ## Major bug fix updates produced after the final release of the
 ## distribution.
 deb http://mirror.bjtu.edu.cn/ubuntu natty-updates main restricted
-deb-src http://mirror.bjtu.edu.cn/ubuntu natty-updates restricted main multiverse universe 
+deb-src http://mirror.bjtu.edu.cn/ubuntu natty-updates restricted main multiverse universe
 
 ## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
 ## team. Also, please note that software in universe WILL NOT receive any
@@ -24,7 +24,7 @@ deb http://mirror.bjtu.edu.cn/ubuntu natty multiverse
 deb http://mirror.bjtu.edu.cn/ubuntu natty-updates multiverse
 
 deb http://mirror.bjtu.edu.cn/ubuntu natty-security main restricted
-deb-src http://mirror.bjtu.edu.cn/ubuntu natty-security restricted main multiverse universe 
+deb-src http://mirror.bjtu.edu.cn/ubuntu natty-security restricted main multiverse universe
 
 ## Uncomment the following two lines to add software from the 'backports'
 ## repository.
