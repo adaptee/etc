@@ -1,32 +1,39 @@
 # /etc/fstab: static file system information.
 #
 #
-# <file system>     <mount point>       <type>      <options>                   <dump>  <pass>
+# <file system>     <mount point>           <type>      <options>                   <dump>  <pass>
 
-proc                /proc               proc        defaults                        0       0
-/dev/sda1           /                   reiserfs    noatime,notail                        0       0
-/dev/sda5           /boot               ext3        noatime                        0       0
-/dev/sda12          none                swap        sw                              0       0
+/dev/sda1           /                       reiserfs    defaults,noatime                0       0
+/dev/sda5           /boot                   ext3        defaults,noatime                0       0
+/dev/sda12          none                    swap        sw                              0       0
 
-none                /proc/bus/usb       usbfs       noauto,defaults                 0       0
+proc                /proc                   proc        defaults                        0       0
+none                /proc/bus/usb           usbfs       auto,busgid=108,busmode=0775,devgid=108,devmode=0664 0 0
 
-devpts              /dev/pts            devpts      defaults                        0       0
-shm                 /dev/shm            tmpfs       nodev,nosuid                    0       0
-tmp                 /tmp                tmpfs       nosuid,mode=1777,size=1G        0       0
+devpts              /dev/pts                devpts      defaults                        0       0
+tmpfs               /dev/shm                tmpfs       nodev,nosuid                    0       0
+tmpfs               /tmp                    tmpfs       nosuid,mode=1777,size=1G        0       0
+tmpfs               /var/run                tmpfs       nosuid,mode=1777,size=1G        0       0
+tmpfs               /var/lock               tmpfs       nosuid,mode=1777,size=1G        0       0
 
-/dev/cdrom          /media/cd           auto        ro,user,noauto,unhide           0       0
-/dev/dvd            /media/dvd          auto        ro,user,noauto,unhide           0       0
+/dev/cdrom          /media/cd               auto        ro,user,noauto,unhide           0       0
+/dev/dvd            /media/dvd              auto        ro,user,noauto,unhide           0       0
+
+/dev/sda6           /home/whodare/audio     reiserfs    defaults,noatime                0       0
+/dev/sda7           /home/whodare/book      reiserfs    defaults,noatime                0       0
+/dev/sda8           /home/whodare/down      reiserfs    defaults,noatime                0       0
+/dev/sda9           /home/whodare/img       reiserfs    defaults,noatime                0       0
+/dev/sda10          /home/whodare/vbox      reiserfs    defaults,noatime                0       0
+/dev/sda11          /mnt/personal           reiserfs    defaults,noatime                0       0
+
+/dev/sda3           /mnt/gentoo             reiserfs    defaults,noatime                0       0
+/dev/sda13          /mnt/sid                reiserfs    defaults,noatime                0       0
+/dev/sda14          /mnt/fedora             ext4        defaults,noatime                0       0
+/dev/sda2           /mnt/bsd                ufs         ro,ufstype=ufs2                 0       0
 
 
-/dev/sda2           /mnt/kubuntu        reiserfs        rw,noatime,notail                        0       0
-/dev/sda3           /mnt/gentoo         reiserfs        rw,noatime,notail                        0       0
+/home/whodare/audio/arch.img   /mnt/loop    reiserfs    loop,noatime                    0       0
+/home/whodare/vbox/chakra.img  /mnt/chakra  ext4        loop,noatime                    0       0
+/home/whodare/down/kubuntu.img /mnt/kubuntu ext4        loop,noatime                    0       0
 
-/dev/sda6           /home/whodare/audio reiserfs    rw,noatime,notail                     0       0
-/dev/sda7           /home/whodare/book  reiserfs    rw,noatime,notail                     0       0
-/dev/sda8           /home/whodare/down  reiserfs    rw,noatime,notail                     0       0
-/dev/sda9           /home/whodare/img   reiserfs    rw,noatime,notail                     0       0
-/dev/sda10          /home/whodare/vbox  reiserfs    rw,noatime,notail                     0       0
-
-/dev/sda11          /mnt/personal       reiserfs    rw,noatime,notail                        0       0
-
-/var/lib/pacman.db  /var/lib/pacman     reiserfs    loop,defaults                   0       0
+/var/lib/pacman.db  /var/lib/pacman         reiserfs    loop,noatime                    0       0
