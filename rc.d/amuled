@@ -30,7 +30,7 @@ case "$1" in
         stat_busy "Stopping aMule Daemon"
 
         #killall --quiet --ignore-case "$DAEMON"
-        su "$USER" -c "amulecmd -c shutdown"
+        su "$USER" -c "amulecmd -c shutdown" &> /dev/null
 
         rm_daemon amuled
         stat_done
