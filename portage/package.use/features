@@ -1,3 +1,6 @@
+# I do not use syslog over network
+app-admin/syslog-ng              -ssl -tcpd
+
 # I do not need vala binding
 app-i18n/ibus                   gconf -vala
 
@@ -83,8 +86,9 @@ net-misc/wicd                   -gtk -X
 # do not nedd GUi frontend
 #net-misc/slimrat                -X
 
-# I do not use syslog over network
-app-admin/syslog-ng              -ssl -tcpd
+
+# use system qt, not internal qt
+sci-geosciences/googleearth     -qt-bundled
 
 # do not need translated manpages!
 sys-apps/man-pages              -linguas_zh_CN
