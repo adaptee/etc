@@ -1,39 +1,46 @@
 # /etc/fstab: static file system information.
 #
 #
-# <file system>     <mount point>       <type>          <options>                   <dump>  <pass>
+# <file system>     <mount point>           <type>      <options>                   <dump>  <pass>
 
-proc                /proc               proc            defaults                        0       0
-/dev/sda3           /                   reiserfs        relatime                        0       0
-/dev/sda5           /boot               ext3            relatime                        0       0
-#/sqfs/usr.lzo       /sqfs/usr/ro        squashfs        loop,ro                         0       0
-#none                /usr                aufs            udba=reval,br:/sqfs/usr/rw=rw:/sqfs/usr/ro=rr           0       0
-/dev/sda12          none                swap            sw                              0       0
+/dev/sda1           /                       reiserfs    defaults,noatime                0       0
+/dev/sda5           /boot                   ext3        defaults,noatime                0       0
+/dev/sda12          swap                    swap        defaults                        0       0
 
-devpts              /dev/pts            devpts          defaults                        0       0
-shm                 /dev/shm            tmpfs           nodev,nosuid                    0       0
-tmpfs               /tmp                tmpfs           nosuid,mode=1777,size=1G        0       0
+#/sqfs/usr.lzo       /sqfs/usr/ro           squashfs    loop,ro                         0       0
+#none                /usr                   aufs        udba=reval,br:/sqfs/usr/rw=rw:/sqfs/usr/ro=rr           0       0
 
-/dev/cdrom          /media/cd           auto            ro,user,noauto,unhide           0       0
-/dev/dvd            /media/dvd          auto            ro,user,noauto,unhide           0       0
+proc                /proc                   proc        defaults                        0       0
 
-/dev/sda1           /mnt/arch           reiserfs        rw,relatime                     0       0
-/dev/sda13          /mnt/kubuntu        reiserfs        rw,relatime                     0       0
+devpts              /dev/pts                devpts      defaults                        0       0
+tmpfs               /dev/shm                tmpfs       nodev,nosuid                    0       0
+tmpfs               /tmp                    tmpfs       nosuid,mode=1777,size=1G        0       0
+tmpfs               /var/run                tmpfs       nosuid,mode=1777,size=1G        0       0
+tmpfs               /var/lock               tmpfs       nosuid,mode=1777,size=1G        0       0
 
-/dev/sda6           /home/whodare/audio reiserfs        rw,relatime                     0       0
-/dev/sda7           /home/whodare/book  reiserfs        rw,relatime                     0       0
-/dev/sda8           /home/whodare/down  reiserfs        rw,relatime                     0       0
-/dev/sda9           /home/whodare/img   reiserfs        rw,relatime                     0       0
-/dev/sda10          /home/whodare/vbox  reiserfs        rw,relatime                     0       0
+/dev/cdrom          /media/cd               auto        ro,user,noauto,unhide           0       0
+/dev/dvd            /media/dvd              auto        ro,user,noauto,unhide           0       0
 
-/dev/sda11          /mnt/personal       reiserfs        rw,relatime                     0       0
-/dev/sda14          /mnt/chakra         ext4            rw,relatime                     0       0
+/dev/sda6           /home/whodare/audio     reiserfs    defaults,noatime                0       0
+/dev/sda7           /home/whodare/book      reiserfs    defaults,noatime                0       0
+/dev/sda8           /home/whodare/down      reiserfs    defaults,noatime                0       0
+/dev/sda9           /home/whodare/img       reiserfs    defaults,noatime                0       0
+/dev/sda10          /home/whodare/vbox      reiserfs    defaults,noatime                0       0
+/dev/sda11          /mnt/personal           reiserfs    defaults,noatime                0       0
+
+/dev/sda1           /mnt/arch               reiserfs    defaults,noatime                0       0
+/dev/sda13          /mnt/sid                reiserfs    defaults,noatime                0       0
+/dev/sda14          /mnt/fedora             ext4        defaults,noatime                0       0
+/dev/sda2           /mnt/bsd                ufs         ro,ufstype=ufs2                 0       0
+
+
+/home/whodare/audio/arch.img   /mnt/loop    reiserfs    loop,noatime                    0       0
+/home/whodare/vbox/chakra.img  /mnt/chakra  ext4        loop,noatime                    0       0
+/home/whodare/down/kubuntu.img /mnt/kubuntu ext4        loop,noatime                    0       0
 
 # improve the speed of emerge
-/sqfs/portage.db    /portage            reiserfs        rw,relatime                     0       0
-/home/whodare/audio/arch.img  /mnt/loop ext4            loop,relatime                   0       0
+/sqfs/portage.db    /portage                reiserfs    rw,relatime                     0       0
 
 # a example for mounting vfat && ntfs filesystem
-#/dev/sdaX         /mnt/vfat             vfat            rw,utf8                         0       0
-#/dev/sdaY         /mnt/ntfs             ntfs            rw,utf8                         0       0
-
+#/dev/sdaX         /mnt/vfat                 vfat        rw,utf8                         0       0
+#/dev/sdaY         /mnt/ntfs                 ntfs        rw,utf8                         0       0
