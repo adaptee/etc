@@ -1,2 +1,6 @@
 # no need for gtk3
 >=x11-libs/gtk+-3.0.0
+
+# do net need 5.0 beta
+>=net-libs/xulrunner-5.0_beta2
+>=www-client/firefox-5.0_beta2
