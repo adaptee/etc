@@ -3,6 +3,7 @@ app-admin/syslog-ng              -ssl -tcpd
 
 # I do not need vala binding
 app-i18n/ibus                   gconf -vala
+app-i18n/ibus-pinyin            opencc -lua
 
 # fbterm can't build without gpm
 app-i18n/fbterm                 gpm
@@ -43,7 +44,7 @@ media-sound/deadbeef            tta ape
 # pulseaudio is enough
 media-sound/libcanberra         -gstreamer
 
-media-libs/phonon               xine vlc -gstreamer  
+media-libs/phonon               xine vlc gstreamer  
 
 # do not need `start-pulseaudio-x11`;
 # do not need its network transparency
@@ -53,11 +54,11 @@ media-sound/pulseaudio          -X -tcpd
 media-libs/mesa                 -gallium
 
 media-video/mplayer             enca real vdpau ssse3 shm -gmplayer -lirc -xscreensaver 
-media-video/vlc                 libass
+media-video/vlc                 libass -lua
 
 # only use console version
 net-analyzer/mtr                -gtk
-net-analyzer/nmap               -gtk
+net-analyzer/nmap               -gtk -lua
 
 
 # I do not need such advanced features
