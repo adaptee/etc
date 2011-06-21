@@ -39,8 +39,14 @@ module_iwlcore_args_2_6=""
 modules_2_6="${modules_2_6} iwl3945"
 module_iwl3945_args_2_6=""
 
+modules_2_6="${modules_2_6} loop"
+module_loop_args_2_6="max_loop=16"
+
 modules_2_6="${modules_2_6} fuse"
 module_fuse_args_2_6=""
 
 modules_2_6="${modules_2_6} btrfs"
-module_fuse_args_2_6=""
+module_btrfs_args_2_6=""
+
+
+
