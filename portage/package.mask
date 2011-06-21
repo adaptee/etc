@@ -4,3 +4,7 @@
 # do net need 5.0 beta
 >=net-libs/xulrunner-5.0_beta2
 >=www-client/firefox-5.0_beta2
+
+# buggy driver
+>x11-drivers/nvidia-drivers-270.41.19
+
