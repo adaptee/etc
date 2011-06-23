@@ -1,0 +1,4 @@
+#deb http://cdn.debian.net/debian/ sid main 
+deb http://debian.bjtu.edu.cn/debian/ sid main contrib non-free
+deb-src http://debian.bjtu.edu.cn/debian/ sid main contrib non-free
+#deb-src http://cdn.debian.net/debian/ sid main contrib non-free

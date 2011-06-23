@@ -1,0 +1,4 @@
+# In order to get repository key, install `pkg-kde-archive-keyring` 
+#deb http://qt-kde.debian.net/debian experimental-snapshots main
+#deb-src http://qt-kde.debian.net/debian experimental-snapshots main
+
