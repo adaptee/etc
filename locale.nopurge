@@ -19,7 +19,7 @@ MANDELETE
 # locales which have newly appeared on the system without
 # bothering you about it:
 
-#DONTBOTHERNEWLOCALE
+DONTBOTHERNEWLOCALE
 
 #####################################################
 # Commenting out this string enables faster but less
@@ -49,8 +49,6 @@ SHOWFREEDSPACE
 #####################################################
 # Following locales won't be deleted from this system
 # for example:
-en_US
 en_US.UTF-8
-zh_CN
 zh_CN.UTF-8
 
