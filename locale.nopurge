@@ -14,7 +14,7 @@ MANDELETE
 # locales which have newly appeared on the system without
 # bothering you about it:
 
-#DONTBOTHERNEWLOCALE
+DONTBOTHERNEWLOCALE
 
 ####################################################
 # Uncommenting this string enables display of freed disk
@@ -35,7 +35,8 @@ QUICKNDIRTYCALC
 
 #####################################################
 # Following locales won't be deleted from this system
-# after package installations done with apt-get(8):
-
+# for example:
+en_US
 en_US.UTF-8
+zh_CN
 zh_CN.UTF-8
