@@ -3,7 +3,7 @@ app-admin/syslog-ng              -ssl -tcpd
 
 # I do not need vala binding
 app-i18n/ibus                   gconf -vala
-app-i18n/ibus-pinyin            opencc -lua
+app-i18n/ibus-pinyin            opencc 
 
 # fbterm can't build without gpm
 app-i18n/fbterm                 gpm
@@ -44,7 +44,7 @@ media-sound/deadbeef            tta ape
 # pulseaudio is enough
 media-sound/libcanberra         -gstreamer
 
-media-libs/phonon               xine vlc gstreamer  
+media-libs/phonon               xine vlc 
 
 # do not need `start-pulseaudio-x11`;
 # do not need its network transparency
@@ -54,11 +54,11 @@ media-sound/pulseaudio          -X -tcpd
 media-libs/mesa                 -gallium
 
 media-video/mplayer             enca real vdpau ssse3 shm -gmplayer -lirc -xscreensaver 
-media-video/vlc                 libass -lua
+media-video/vlc                 libass 
 
 # only use console version
 net-analyzer/mtr                -gtk
-net-analyzer/nmap               -gtk -lua
+net-analyzer/nmap               -gtk 
 
 
 # I do not need such advanced features
@@ -76,7 +76,7 @@ net-p2p/amule                   daemon remote geoip -upnp -stats
 
 net-p2p/ktorrent                -upnp  -zeroconf -magnetgenerator -mediaplayer -webinterface 
 
-#net-p2p/rtorrent                daemon
+#net-p2p/rtorrent               daemon
 
 # only use it as a DNS cacher
 net-dns/dnsmasq                 -dhcp -tftp
@@ -89,7 +89,7 @@ net-misc/wicd                   -gtk -X
 
 
 # use system qt, not internal qt
-sci-geosciences/googleearth     -qt-bundled
+sci-geosciences/googleearth     -qt-bundled 
 
 # do not need translated manpages!
 sys-apps/man-pages              -linguas_zh_CN
@@ -146,3 +146,7 @@ media-libs/libpng               static-libs
 
 media-gfx/splashutils           fbcondecor
 
+
+media-libs/freeverb3            audacious
+
+kde-base/kdeartwork-kscreensaver         -xscreensaver
