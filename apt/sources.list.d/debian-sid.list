@@ -1,4 +1,11 @@
 #deb http://cdn.debian.net/debian/ sid main 
-deb http://debian.bjtu.edu.cn/debian/ sid main contrib non-free
-deb-src http://debian.bjtu.edu.cn/debian/ sid main contrib non-free
 #deb-src http://cdn.debian.net/debian/ sid main contrib non-free
+
+#deb http://debian.bjtu.edu.cn/debian/ sid main contrib non-free
+#deb-src http://debian.bjtu.edu.cn/debian/ sid main contrib non-free
+
+deb http://mirrors.163.com/debian/ sid main non-free contrib
+deb-src http://mirrors.163.com/debian/ sid main non-free contrib
+
+#deb http://mirrors.163.com/debian/ sid-proposed-updates main non-free contrib
+#deb-src http://mirrors.163.com/debian/ sid-proposed-updates main non-free contrib
