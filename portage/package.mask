@@ -1,10 +1,4 @@
 # no need for gtk3
 >=x11-libs/gtk+-3.0.0
 
-# do net need 5.0 beta
->=net-libs/xulrunner-5.0_beta2
->=www-client/firefox-5.0_beta2
-
-# buggy driver
->x11-drivers/nvidia-drivers-270.41.19
-
+>=sys-kernel/linux-headers-2.6.39
