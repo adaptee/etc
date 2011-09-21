@@ -23,6 +23,11 @@ dev-vcs/subversion              perl -dso
 # why not?
 dev-lang/python                 sqlite
 
+# do not need bazaar integration
+kde-base/dolphin-plugins        -bazaar
+
+kde-base/kdeartwork-kscreensaver         -xscreensaver
+
 # I am only interested with python binding
 kde-base/kdebinginds-meta       -java -csharp -perl -ruby
 
@@ -44,7 +49,7 @@ media-sound/deadbeef            tta ape
 # pulseaudio is enough
 media-sound/libcanberra         -gstreamer
 
-media-libs/phonon               xine vlc 
+media-libs/phonon               vlc 
 
 # do not need `start-pulseaudio-x11`;
 # do not need its network transparency
@@ -127,9 +132,6 @@ x11-misc/redshift               -gtk
 dev-db/mysql                    embedded
 virtual/mysql                   embedded
 
-# for kdevelop-4.2.0
->dev-util/kdevplatform-1.2.0    subversion
-
 # for building xulrunner-2.0
 media-libs/libpng               apng
 
@@ -142,11 +144,10 @@ media-libs/libpng               static-libs
 =virtual/jpeg-0                 static-libs
 =media-libs/jpeg-8c             static-libs
 =media-libs/libmng-1.0.10-r1    static-libs
+media-libs/freetype             static-libs
+app-arch/bzip2                  static-libs
 
+media-gfx/splashutils           fbcondecor 
 
-media-gfx/splashutils           fbcondecor
-
-
-media-libs/freeverb3            audacious
-
-kde-base/kdeartwork-kscreensaver         -xscreensaver
+dev-libs/glib                   introspection
+app-i18n/fcitx                  qt gtk -gtk3 opencc 
