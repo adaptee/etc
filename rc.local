@@ -22,3 +22,7 @@ chown -R whodare:whodare /tmp/coredump
 # swap Esc and CapsLock, for vimmer !
 echo "keycode 58 = Escape" | loadkeys -
 
+# disable the buggy khugepaged kernel thread sine 2.6.38
+echo never >/sys/kernel/mm/transparent_hugepage/enabled
+
+
