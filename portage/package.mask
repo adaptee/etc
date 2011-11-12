@@ -2,3 +2,6 @@
 >=x11-libs/gtk+-3.0.0
 
 >=sys-kernel/linux-headers-2.6.39
+
+# version 30 make wicd fail to connect to hidden AP
+>app-wireless/wireless_tools-29
