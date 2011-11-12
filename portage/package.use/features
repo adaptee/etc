@@ -1,9 +1,12 @@
 # I do not use syslog over network
 app-admin/syslog-ng              -ssl -tcpd
 
+app-emulation/virtualbox        -python -sdk
+
 # I do not need vala binding
 app-i18n/ibus                   gconf -vala
 app-i18n/ibus-pinyin            opencc 
+app-i18n/fcitx                  qt gtk -gtk3 opencc 
 
 # fbterm can't build without gpm
 app-i18n/fbterm                 gpm
@@ -12,6 +15,9 @@ app-i18n/fbterm                 gpm
 # optimize! optimize! optimize!
 app-portage/eix                 sqlite optimization strong-optimization -bzip2 
 
+# for amraok
+dev-db/mysql                    embedded
+virtual/mysql                   embedded
 
 # I do not need support for sftp
 #dev-vcs/bzr                     -sftp
@@ -87,14 +93,10 @@ net-p2p/ktorrent                -upnp  -zeroconf -magnetgenerator -mediaplayer -
 net-dns/dnsmasq                 -dhcp -tftp
 
 # I use wicd-kde as gui front for wicd
-net-misc/wicd                   -gtk -X
+net-misc/wicd                   gtk X
 
 # do not nedd GUi frontend
 #net-misc/slimrat                -X
-
-
-# use system qt, not internal qt
-sci-geosciences/googleearth     -qt-bundled 
 
 # do not need translated manpages!
 sys-apps/man-pages              -linguas_zh_CN
@@ -104,6 +106,7 @@ sys-apps/man-pages              -linguas_zh_CN
 # I do not use encrypted partitio/device
 sys-apps/pmount                 -crypt
 
+# less gtk stuff
 sys-auth/polkit                 -gtk
 
 # do not need pstree.x11
@@ -119,7 +122,7 @@ www-client/opera                -gtk
 x11-libs/cairo                  cleartype lcdfilter
 
 # use udisks to mount USB sticks
-x11-libs/libfm                  udev udisks 
+#x11-libs/libfm                  udev udisks 
 
 # do not need gui
 x11-misc/redshift               -gtk
@@ -127,16 +130,6 @@ x11-misc/redshift               -gtk
 
 
 # ----------------- Temporary ---------------------- #
-
-# for amraok-2.4.x
-dev-db/mysql                    embedded
-virtual/mysql                   embedded
-
-# for building xulrunner-2.0
-media-libs/libpng               apng
-
-# for kde-4.6.1
-dev-python/PyQt4                declarative
 
 # needed for building splashutils
 =media-libs/lcms-1.19           static-libs
@@ -146,8 +139,5 @@ media-libs/libpng               static-libs
 =media-libs/libmng-1.0.10-r1    static-libs
 media-libs/freetype             static-libs
 app-arch/bzip2                  static-libs
-
+sys-libs/zlib                   static-libs minizip
 media-gfx/splashutils           fbcondecor 
-
-dev-libs/glib                   introspection
-app-i18n/fcitx                  qt gtk -gtk3 opencc 
