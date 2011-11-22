@@ -1,0 +1,16 @@
+# support applying patches under /etc/portage/patches/ system-wide
+
+# stolen from http://forums.gentoo.org/viewtopic-t-791464.html
+#post_src_prepare() {
+    #epatch_user
+#}
+
+
+# stolen from http://comments.gmane.org/gmane.linux.gentoo.user/246873
+post_src_unpack() {
+    if type epatch_user >& /dev/null
+    then
+        cd "${S}"
+        epatch_user
+    fi
+}
