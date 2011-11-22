@@ -70,6 +70,7 @@ media-video/vlc                 libass
 # only use console version
 net-analyzer/mtr                -gtk
 net-analyzer/nmap               -gtk 
+net-analyzer/pinger             -gtk 
 
 
 # I do not need such advanced features
@@ -141,3 +142,7 @@ media-libs/freetype             static-libs
 app-arch/bzip2                  static-libs
 sys-libs/zlib                   static-libs minizip
 media-gfx/splashutils           fbcondecor 
+
+# for some kde apps i am involved, I do want the handbook
+#kde-base/kdelibs                handbook
+#kde-base/konsole                handbook
