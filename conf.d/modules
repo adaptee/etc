@@ -18,61 +18,35 @@
 # You should consult your kernel documentation and configuration
 # for a list of modules and their options.
 
-modules_2_6="${modules_2_6} intel_agp"
-module_intel_agp_args_2_6=""
+#---------------------------#
 
-modules_2_6="${modules_2_6} nvidia"
-module_nvidia_args_2_6=""
+modules="${modules} intel_agp"
+module_intel_agp_args=""
 
-modules_2_6="${modules_2_6} vboxdrv"
-module_vboxdrv_args_2_6=""
+#modules="${modules} nvidia"
+#module_nvidia_args=""
 
-modules_2_6="${modules_2_6} vboxnetflt"
-module_vboxnetflt_args_2_6=""
+modules="${modules} nouveau"
+module_nvidia_args=""
 
-modules_2_6="${modules_2_6} vboxnetadp"
-module_vboxnetadp_args_2_6=""
+modules="${modules} vboxdrv"
+module_vboxdrv_args=""
 
-modules_2_6="${modules_2_6} iwlcore"
-module_iwlcore_args_2_6=""
+modules="${modules} vboxnetflt"
+module_vboxnetflt_args=""
 
-modules_2_6="${modules_2_6} iwl3945"
-module_iwl3945_args_2_6=""
+modules="${modules} vboxnetadp"
+module_vboxnetadp_args=""
 
-modules_2_6="${modules_2_6} loop"
-module_loop_args_2_6="max_loop=16"
+modules="${modules} iwl3945"
+module_iwl3945_args=""
 
-modules_2_6="${modules_2_6} fuse"
-module_fuse_args_2_6=""
+modules="${modules} loop"
+module_loop_args="max_loop=16"
 
-modules_2_6="${modules_2_6} btrfs"
-module_btrfs_args_2_6=""
+modules="${modules} fuse"
+module_fuse_args=""
 
-
-modules_3_2="${modules_3_2} intel_agp"
-module_intel_agp_args_3_2=""
-
-modules_3_2="${modules_3_2} nvidia"
-module_nvidia_args_3_2=""
-
-modules_3_2="${modules_3_2} vboxdrv"
-module_vboxdrv_args_3_2=""
-
-modules_3_2="${modules_3_2} vboxnetflt"
-module_vboxnetflt_args_3_2=""
-
-modules_3_2="${modules_3_2} vboxnetadp"
-module_vboxnetadp_args_3_2=""
-
-modules_3_2="${modules_3_2} iwl3945"
-module_iwl3945_args_3_2=""
-
-modules_3_2="${modules_3_2} loop"
-module_loop_args_3_2="max_loop=16"
-
-modules_3_2="${modules_3_2} fuse"
-module_fuse_args_3_2=""
-
-modules_3_2="${modules_3_2} btrfs"
-module_btrfs_args_3_2=""
+#modules="${modules} btrfs"
+#module_btrfs_args=""
 
